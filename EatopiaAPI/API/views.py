@@ -1,4 +1,5 @@
 from django.http import Http404, JsonResponse
+from django.shortcuts import get_object_or_404
 from requests import Response
 from rest_framework import status
 from rest_framework.response import Response
@@ -22,7 +23,10 @@ class RestaurantList(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     
 class RestaurantDetail(APIView):
-    def get(self, pk, format=None):
+    def get_object(self, pk):
+        return get_object_or_404(Restaurant, pk=pk)
+        
+    def get(self, request, pk, format=None):
         restaurant = self.get_object(pk)
         serializer = RestaurantSerializer(restaurant)
         return Response(serializer.data)
@@ -35,13 +39,13 @@ class RestaurantDetail(APIView):
             return Response(serializer.data)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-    def delete(self, pk, format=None):
+    def delete(self, request, pk, format=None):
         restaurant = self.get_object(pk)
         restaurant.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
     
-class AddressList(APIView):
-    def get(self, format=None):
+class AddressList(APIView):     
+    def get(self, request, format=None):
         addresses = Address.objects.all()
         serializer = AddressSerializer(addresses, many=True)
         return Response(serializer.data)
