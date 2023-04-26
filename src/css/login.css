@@ -1,0 +1,5 @@
+.loginpage{
+    background-image: url('/Users/mehdi/eatopia-react/src/assets/bground.jpg');
+    background-size:cover;
+    height: 100vh;
+}
