@@ -1,6 +1,6 @@
 import React,{useEffect,useState} from 'react'
 import { useParams } from 'react-router-dom';
-
+import L from 'leaflet';
 import Navbar from '../components/Navbar'
 import Heart from '../assets/heart.png'
 import Website from '../assets/website.png'
@@ -27,6 +27,14 @@ const Restaurantdetails = () => {
     };
    fetchRestaurant();
   }, [id]);
+
+  const myIcon = L.icon({
+    iconUrl: require('./loaction.png'),
+    iconRetinaUrl:require('./loaction.png'),
+    iconSize: [38, 38],
+    iconAnchor: [19, 38],
+    popupAnchor: [0, -38],
+  });
   return (
     <div>
     <Navbar/>
@@ -39,10 +47,12 @@ const Restaurantdetails = () => {
         <span className='text-sm'>{restaurant.telephone}</span>
       </div>
       <Rate disabled defaultValue={2} />
-      <div href={restaurant.website} className='flex items-center cursor-pointer'>
+      <a href={restaurant.website} target="_blank">
+      <div  className='flex items-center cursor-pointer'>
       <img className='w-5' src={Website}/>
       <span className='ml-1 text-sm'>Website</span>
       </div>
+      </a>
     </div>
     <div className='flex items-center'>
     <img className='w-5' src={Time}/>
@@ -55,7 +65,7 @@ const Restaurantdetails = () => {
       attribution="&copy; OpenStreetMap contributors"
       url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
     />
-    <Marker position={[31.623075, -7.966311]}>
+    <Marker position={[31.623075, -7.966311]} icon={myIcon}>
       <Popup>IJ</Popup>
     </Marker>
   </MapContainer>
