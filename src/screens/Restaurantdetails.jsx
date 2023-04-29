@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import L from 'leaflet';
 import Navbar from '../components/Navbar'
 import Heart from '../assets/heart.png'
+import RHeart from '../assets/redheart.png'
 import Website from '../assets/website.png'
 import Time from '../assets/tiime.png'
 import Tel from '../assets/telephoner.png'
@@ -13,7 +14,8 @@ import 'leaflet/dist/leaflet.css';
 const Restaurantdetails = () => {
   const [restaurant, setRestaurant] = useState([]);
   const { id } = useParams();
-
+  const [isInWishlist, setIsInWishlist] = useState(false);
+  const heartIcon = isInWishlist ? RHeart : Heart;
   // useEffect to fetch restaurants
   useEffect(() => {
     const fetchRestaurant = async () => {
@@ -39,14 +41,16 @@ const Restaurantdetails = () => {
     <div>
     <Navbar/>
     <div className='flex flex-col justify-center items-center p-6'>
-    <img className='w-7' src={Heart}/>
+    <img className='w-7 cursor-pointer'
+     src={heartIcon}
+     onClick={() => setIsInWishlist(!isInWishlist)}/>
     <h1 className='text-gray-400 text-6xl'>{restaurant.name}</h1>
     <div className='flex items-center gap-8 p-3'>
       <div className='flex items-center'>
       <img className='w-5 mr-1' src={Tel}/>
         <span className='text-sm'>{restaurant.telephone}</span>
       </div>
-      <Rate disabled defaultValue={2} />
+      <Rate disabled defaultValue={restaurant.average_rating} />
       <a href={restaurant.website} target="_blank">
       <div  className='flex items-center cursor-pointer'>
       <img className='w-5' src={Website}/>
