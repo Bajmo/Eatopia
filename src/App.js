@@ -6,12 +6,14 @@ import Welcome from './screens/Welcome';
 import Homepage from './screens/Homepage';
 import Preferences from './screens/Preferences';
 import Restaurantdetails from './screens/Restaurantdetails';
+import Register from './screens/Register';
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
       <Route path='/login' element={<Login/>}/>
+      <Route path='/register' element={<Register/>}/>
       <Route path='/welcome' element={<Welcome/>}/>
       <Route path='/home' element={<Homepage/>}/>
       <Route path='/preferences' element={<Preferences/>}/>

@@ -1,7 +1,7 @@
 import React from 'react'
 import Restaurant from '../assets/restaurant.jpg'
 import Heart from '../assets/redheart.png'
-import { Rate } from 'antd';
+import { Rate } from 'antd'
 import { Link , useNavigate } from 'react-router-dom'
 
 const Restaurantcard = (props) => {
