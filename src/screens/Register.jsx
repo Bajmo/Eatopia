@@ -45,13 +45,16 @@ const Register = () => {
       setEmailError("Email is required");
       valid = false;
     } else if (!emailRegex.test(email)) {
-      setEmailError("Invalid email");
+      setEmailError("Invalid email format");
       valid = false;
     } else {
       setEmailError("");
     }
     if (password.trim() === "") {
       setPasswordError("Password is required");
+      valid = false;
+    } else if (password.length < 8) {
+      setPasswordError("Password too short");
       valid = false;
     } else {
       setPasswordError("");
@@ -127,7 +130,7 @@ const Register = () => {
             <p className="mt-1 text-xs text-red-500">{usernameError}</p>
           )}
           <input
-            className="border border-black w-56 rounded-3xl placeholder:text-xs px-3 placeholder:text-red-600 py-2 my-2"
+            className="border border-black w-56 rounded-3xl placeholder:text-xs px-3 placeholder:text-red-600 py-2 mt-2"
             type="text"
             placeholder="Email"
             onChange={(e) => setEmail(e.target.value)}
@@ -135,7 +138,7 @@ const Register = () => {
           {emailError && (
             <p className="mt-1 text-xs text-red-500">{emailError}</p>
           )}
-          <div className="relative">
+          <div className="relative mt-2">
             <input
               onChange={(e) => setPassword(e.target.value)}
               className="border border-black w-56 rounded-3xl placeholder:text-xs px-3 placeholder:text-red-600 py-2"

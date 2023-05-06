@@ -1,4 +1,4 @@
-import React ,{useEffect,useState} from 'react'
+import React, {useContext, useEffect, useState} from 'react'
 import Logo from '../assets/logo.png'
 import Heart from '../assets/heart.png'
 import User from '../assets/user.png'
@@ -7,12 +7,27 @@ import Restaurant from '../assets/restaurant.jpg'
 import { Rate } from 'antd';
 import Navbar from '../components/Navbar'
 import Restaurantcard from '../components/Restaurantcard'
+import { useNavigate } from 'react-router-dom';
+import AuthContext from '../auth/AuthContext';
+
 
 const Homepage = () => {
   const [restaurants, setRestaurants] = useState([]);
+  const { isAuthenticated } = useContext(AuthContext);
+  const navigate = useNavigate();
   
   // useEffect to fetch restaurants
   useEffect(() => {
+    const isFirstTime = localStorage.getItem('firstTime') === null;
+    
+    if (isFirstTime) {
+      localStorage.setItem('firstTime', false);
+
+      if (!isAuthenticated) {
+        navigate('/welcome');
+      }
+    }
+
     fetch('http://127.0.0.1:8000/restaurants')
       .then(response => response.json())
       .then(data => {

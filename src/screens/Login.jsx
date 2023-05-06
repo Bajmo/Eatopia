@@ -55,10 +55,14 @@ const Login = () => {
         "username": username,
         "password": password
       };
-      console.log(body)
   
       // Send a POST request to the ClientUserLogin endpoint to authenticate the user
-      const response = await axios.post("http://localhost:8000/signin", body);
+      const response = await axios.post("http://localhost:8000/signin", body, {
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${localStorage.getItem("token")}`
+        }
+      });
   
       // Check if the response contains an error
       if (response.data.detail) {
@@ -71,8 +75,8 @@ const Login = () => {
       console.error(error);
       throw error;
     }
-
-  }  
+  }
+  
 
   return (
     <div className="loginpage flex items-center justify-center">
@@ -81,15 +85,15 @@ const Login = () => {
         {/* add onSubmit handler */}
         <div className="loginbox w-80 bg-white flex flex-col items-center rounded-3xl p-8">
           <img alt="" className="w-24" src={Logo} />
-          <p className="p-4 font-semibold text-xl">Authenticate</p>
+          <p className="p-4 font-semibold text-xl">Sign in</p>
           <input
             onChange={(e) => setUsername(e.target.value)}
-            className="border border-black w-56 rounded-3xl placeholder:text-xs px-3 placeholder:text-red-600 py-2 mb-2"
+            className="border border-black w-56 rounded-3xl placeholder:text-xs px-3 placeholder:text-red-600 py-2"
             type="text"
             placeholder="Username"
           />
           {usernameError && <p className="mt-1 text-xs text-red-500">{usernameError}</p>}
-          <div className="relative">
+          <div className="relative mt-2">
             <input
               onChange={(e) => setPassword(e.target.value)}
               className="border border-black w-56 rounded-3xl placeholder:text-xs px-3 placeholder:text-red-600 py-2"
@@ -110,7 +114,7 @@ const Login = () => {
             type="submit" // change type to submit
             className="text-white bg-black rounded-3xl w-56 py-3 text-sm mt-4"
           >
-            Log in
+            Sign in
           </button>
           <p className="mt-4 text-xs">Don't have an account yet?</p>
           <span className="text-xs">
