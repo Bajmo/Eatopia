@@ -2,12 +2,15 @@ import React, { useState } from "react";
 import "../css/login.css";
 import Logo from "../assets/logo.png";
 import axios from "axios";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 
 const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [usernameError, setUsernameError] = useState("");
   const [passwordError, setPasswordError] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
 
   function validateInputs() {
     let valid = true;
@@ -33,11 +36,11 @@ const Login = () => {
     }
     try {
       // Authenticate the user and retrieve the token
-      const token = await authenticateUser(username, password);
-
+      const response = await authenticateUser(username, password);
+  
       // Set the token in the local storage
-      localStorage.setItem("token", token);
-
+      localStorage.setItem("token", response.data.token);
+  
       // Redirect the user to the dashboard page
       window.location.href = "/";
     } catch (error) {
@@ -52,24 +55,24 @@ const Login = () => {
         "username": username,
         "password": password
       };
-
+      console.log(body)
+  
       // Send a POST request to the ClientUserLogin endpoint to authenticate the user
-      const response = await axios.post("http://localhost:8000/signin", body)
-        .then((response) => {
-          // Handle success
-        })
-        .catch((error) => {
-          // Handle error
-        });
-      console.log(body);
-
-      // Extract the token from the response and return it
-      return response.data.token;
+      const response = await axios.post("http://localhost:8000/signin", body);
+  
+      // Check if the response contains an error
+      if (response.data.detail) {
+        throw new Error(response.data.detail);
+      }
+  
+      // Return the response
+      return response;
     } catch (error) {
       console.error(error);
       throw error;
     }
-  }
+
+  }  
 
   return (
     <div className="loginpage flex items-center justify-center">
@@ -77,21 +80,30 @@ const Login = () => {
         {" "}
         {/* add onSubmit handler */}
         <div className="loginbox w-80 bg-white flex flex-col items-center rounded-3xl p-8">
-          <img className="w-24" src={Logo} />
+          <img alt="" className="w-24" src={Logo} />
           <p className="p-4 font-semibold text-xl">Authenticate</p>
           <input
             onChange={(e) => setUsername(e.target.value)}
-            className="border border-black w-56 rounded-3xl placeholder:text-xs px-3 placeholder:text-red-600 py-2"
+            className="border border-black w-56 rounded-3xl placeholder:text-xs px-3 placeholder:text-red-600 py-2 mb-2"
             type="text"
             placeholder="Username"
           />
           {usernameError && <p className="mt-1 text-xs text-red-500">{usernameError}</p>}
-          <input
-            onChange={(e) => setPassword(e.target.value)}
-            className="border border-black w-56 rounded-3xl placeholder:text-xs px-3 placeholder:text-red-600 py-2 mt-2"
-            type="password"
-            placeholder="Password"
-          />
+          <div className="relative">
+            <input
+              onChange={(e) => setPassword(e.target.value)}
+              className="border border-black w-56 rounded-3xl placeholder:text-xs px-3 placeholder:text-red-600 py-2"
+              type={showPassword ? "text" : "password"}
+              placeholder="Password"
+            />
+            <button
+              type="button"
+              className="absolute top-1/2 right-0 transform -translate-y-1/2 mr-4"
+              onClick={() => setShowPassword(!showPassword)}
+            >
+              <FontAwesomeIcon className="bg-white" icon={showPassword ? faEyeSlash : faEye} />
+            </button>
+          </div>
           {passwordError && <p className="mt-1 text-xs text-red-500">{passwordError}</p>}
 
           <button

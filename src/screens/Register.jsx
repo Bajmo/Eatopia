@@ -3,6 +3,8 @@ import { useState } from "react";
 import "../css/login.css";
 import Logo from "../assets/logo.png";
 import axios from "axios";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 
 const Register = () => {
   const [firstname, setFirstname] = useState("");
@@ -16,6 +18,7 @@ const Register = () => {
   const [emailError, setEmailError] = useState("");
   const [passwordError, setPasswordError] = useState("");
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
   const emailRegex = /\S+@\S+\.\S+/;
 
   function validateInputs() {
@@ -124,7 +127,7 @@ const Register = () => {
             <p className="mt-1 text-xs text-red-500">{usernameError}</p>
           )}
           <input
-            className="border border-black w-56 rounded-3xl placeholder:text-xs px-3 placeholder:text-red-600 py-2 mt-2"
+            className="border border-black w-56 rounded-3xl placeholder:text-xs px-3 placeholder:text-red-600 py-2 my-2"
             type="text"
             placeholder="Email"
             onChange={(e) => setEmail(e.target.value)}
@@ -132,12 +135,21 @@ const Register = () => {
           {emailError && (
             <p className="mt-1 text-xs text-red-500">{emailError}</p>
           )}
-          <input
-            className="border border-black w-56 rounded-3xl placeholder:text-xs px-3 placeholder:text-red-600 py-2 mt-2"
-            type="password"
-            placeholder="Password"
-            onChange={(e) => setPassword(e.target.value)}
-          />
+          <div className="relative">
+            <input
+              onChange={(e) => setPassword(e.target.value)}
+              className="border border-black w-56 rounded-3xl placeholder:text-xs px-3 placeholder:text-red-600 py-2"
+              type={showPassword ? "text" : "password"}
+              placeholder="Password"
+            />
+            <button
+              type="button"
+              className="absolute top-1/2 right-0 transform -translate-y-1/2 mr-4"
+              onClick={() => setShowPassword(!showPassword)}
+            >
+              <FontAwesomeIcon className="bg-white" icon={showPassword ? faEyeSlash : faEye} />
+            </button>
+          </div>
           {passwordError && (
             <p className="mt-1 text-xs text-red-500">{passwordError}</p>
           )}
