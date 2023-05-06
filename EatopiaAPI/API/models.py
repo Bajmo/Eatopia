@@ -26,16 +26,17 @@ class Restaurant(models.Model):
     cuisine = models.CharField(max_length=100)   
     description = models.CharField(null=False, max_length=1000)
     opening_hours = models.CharField(null=False, max_length=50, default='No opening hours available')
-    #location = models.CharField(null=False, max_length=300)
-    #latitude = models.FloatField(null=False)
-    #longitude = models.FloatField(null=False)
     telephone = models.CharField(null=False, max_length=30)
     website = models.CharField(null=False, max_length=300)
     average_rating = models.FloatField(null=False)
     address = models.ForeignKey(Address, on_delete=models.CASCADE, null=False)
 
+class RestaurantImage(models.Model):
+    Restaurant = models.ForeignKey(Restaurant, on_delete=models.CASCADE)
+    url = models.CharField(null=True, max_length=300, default='No image available')
+
 class ClientUser(AbstractUser):
-    address = models.ForeignKey(Address, on_delete=models.CASCADE)
+    address = models.ForeignKey(Address, on_delete=models.CASCADE, null=True, blank=True)
     groups = models.ManyToManyField(
         'auth.Group',
         blank=True,

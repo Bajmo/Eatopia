@@ -1,22 +1,53 @@
 from rest_framework import serializers
-from .models import Address, Restaurant
+from .models import Address, Restaurant, RestaurantImage, ClientUser, Wishlist, Review, Rating
 
 class AddressSerializer(serializers.ModelSerializer):
     class Meta:
         model = Address
-        fields = '__all__'
+        fields = ('id', 'address_string', 'location', 'latitude', 'longitude', 'city')
 
 class RestaurantSerializer(serializers.ModelSerializer):
     address = AddressSerializer()
 
     class Meta:
         model = Restaurant
-        fields = '__all__'
+        fields = ('id', 'name', 'cuisine', 'description', 'opening_hours', 'telephone', 'website', 'average_rating', 'address')
 
-    def create(self, validated_data):
-        address_data = validated_data.pop('address')
-        address_serializer = AddressSerializer(data=address_data)
-        address_serializer.is_valid(raise_exception=True)
-        address = address_serializer.save()
-        restaurant = Restaurant.objects.create(address=address, **validated_data)
-        return restaurant
+class RestaurantImageSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = RestaurantImage
+        fields = ('id', 'Restaurant', 'url')
+
+class GroupSerializer(serializers.StringRelatedField):
+    def to_representation(self, value):
+        return value.name
+
+class PermissionSerializer(serializers.StringRelatedField):
+    def to_representation(self, value):
+        return value.name
+
+class ClientUserSerializer(serializers.ModelSerializer):
+    address = AddressSerializer(required=False)
+    groups = GroupSerializer(many=True, required=False)
+    user_permissions = PermissionSerializer(many=True, required=False)
+
+    class Meta:
+        model = ClientUser
+        fields = ('id', 'password', 'username', 'email', 'first_name', 'last_name', 'address', 'groups', 'user_permissions')
+
+class WishlistSerializer(serializers.ModelSerializer):
+    client_user = ClientUserSerializer()
+    restaurants = RestaurantSerializer()
+
+    class Meta:
+        model = Wishlist
+        fields = ('id', 'client_user', 'restaurants')
+
+class ReviewSerializer(serializers.ModelSerializer):
+    rating = serializers.ChoiceField(choices=Rating.choices)
+    client_user = ClientUserSerializer()
+    restaurant = RestaurantSerializer()
+
+    class Meta:
+        model = Review
+        fields = ('id', 'rating', 'comment', 'review_date', 'client_user', 'restaurant')
