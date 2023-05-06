@@ -48,11 +48,20 @@ const Login = () => {
 
   async function authenticateUser(username, password) {
     try {
+      const body = {
+        "username": username,
+        "password": password
+      };
+
       // Send a POST request to the ClientUserLogin endpoint to authenticate the user
-      const response = await axios.post("http://localhost:8000/signin", {
-        username: username,
-        password: password,
-      });
+      const response = await axios.post("http://localhost:8000/signin", body)
+        .then((response) => {
+          // Handle success
+        })
+        .catch((error) => {
+          // Handle error
+        });
+      console.log(body);
 
       // Extract the token from the response and return it
       return response.data.token;
