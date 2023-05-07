@@ -8,10 +8,17 @@ class AddressSerializer(serializers.ModelSerializer):
 
 class RestaurantSerializer(serializers.ModelSerializer):
     address = AddressSerializer()
+    is_wishlisted = serializers.SerializerMethodField()
 
     class Meta:
         model = Restaurant
-        fields = ('id', 'name', 'cuisine', 'description', 'opening_hours', 'telephone', 'website', 'average_rating', 'address')
+        fields = ('id', 'name', 'cuisine', 'description', 'opening_hours', 'telephone', 'website', 'average_rating', 'address', 'is_wishlisted')
+
+    def get_is_wishlisted(self, obj):
+        user = self.context.get('user')
+        if user and user.is_authenticated:
+            return Wishlist.objects.filter(client_user=user, restaurants=obj).exists()
+        return None
 
 class RestaurantImageSerializer(serializers.ModelSerializer):
     class Meta:
@@ -34,7 +41,16 @@ class ClientUserSerializer(serializers.ModelSerializer):
     class Meta:
         model = ClientUser
         fields = ('id', 'password', 'username', 'email', 'first_name', 'last_name', 'address', 'groups', 'user_permissions')
+        extra_kwargs = {'password': {'write_only': True}}
 
+    def create(self, validated_data):
+        password = validated_data.pop('password', None)
+        instance = self.Meta.model(**validated_data)
+        if password is not None:
+            instance.set_password(password)
+        instance.save()
+        return instance
+    
 class WishlistSerializer(serializers.ModelSerializer):
     client_user = ClientUserSerializer()
     restaurants = RestaurantSerializer()

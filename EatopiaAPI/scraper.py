@@ -1,7 +1,16 @@
 import base64
+import codecs
 import json
+import re
+
 import requests
+import webdriver_manager
 from bs4 import BeautifulSoup
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.ui import WebDriverWait
+from webdriver_manager.chrome import ChromeDriverManager
 
 url = ('https://www.tripadvisor.com/Restaurants-g293734-Marrakech_Marrakech_Safi.html')
 
@@ -20,15 +29,46 @@ for link in soup.find_all("a", {"class": "Lwqic Cj b"}):
 
 # Loop through each restaurant's details page and extract the relevant information
 restaurants = [] # Initialize the list of restaurant dictionaries
+restaurant_images = [] # Initialize the list of restaurant images dictionaries
 addresses = [] # Initialize the list of addresses dictionaries
-counter = 0
-address_id = 1
+counter_restaurants = 0
+index = 1
 for link in restaurant_links:
-    if counter == 30:
+    if counter_restaurants == 30:
         break
 
-    restaurant_response = requests.get(link, headers = user_agent)
+    restaurant_response = requests.get(link, headers = user_agent) 
     restaurant_soup = BeautifulSoup(restaurant_response.content, "html.parser")
+
+    photo_album_div = restaurant_soup.find("div", {"class": "mosaic_photos"})
+
+    counter_images = 0
+    for img in photo_album_div.find_all("img"):
+        if counter_restaurants == 5:
+            break
+        restaurant_images.append({"restaurant_id": index, "url": img["src"]})
+        image_link = link + '#photos;aggregationId=101&albumid=101&filter=7&ff=' + img["data-mediaid"] + '&albumViewMode=hero&aggregationId=101&albumid=101&ff=' + img["data-mediaid"]
+        
+        options = webdriver.ChromeOptions()
+        options.add_experimental_option('excludeSwitches', ['enable-logging'])
+        driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options,)
+        driver.get(image_link)
+        get_url = driver.current_url
+        driver.implicitly_wait(10)
+        if get_url == image_link:
+            page_source = driver.page_source
+
+        driver.get('https://www.google.com/')
+        
+        image_soup = BeautifulSoup(page_source,features='html.parser')
+        # Use prettify() to format the HTML
+        html_formatted = image_soup.prettify()
+
+        # Write the formatted HTML to a file
+        with open('output.html', 'w', encoding='utf-8') as f:
+            f.write(html_formatted)
+
+        counter_images += 1
 
     restaurant_name = restaurant_soup.find("h1", {"class": "HjBfq"}).text
     if restaurant_name is None:
@@ -62,7 +102,9 @@ for link in restaurant_links:
     time_span = restaurant_soup.find("span", {"class": "mMkhr"})
     if time_span:
         restaurant_opening_hours = time_span.text.replace(" Open now", '').replace(" Closed now", '').replace(" See all hours", '').replace(":&nbsp;", '')[2:]
-        if restaurant_opening_hours == "":
+        if len(restaurant_opening_hours) > 20:
+            restaurant_opening_hours = restaurant_opening_hours[:18] + " and " + restaurant_opening_hours[18:]
+        if restaurant_opening_hours == "" or ("Opens in " or "Closes in ") in restaurant_opening_hours:
             restaurant_opening_hours = "No opening hours available"
     else:
         restaurant_opening_hours = "No opening hours available"
@@ -121,14 +163,10 @@ for link in restaurant_links:
         "cuisine": restaurant_cuisine,
         "description": restaurant_description,
         "opening_hours": restaurant_opening_hours,
-        #"address": restaurant_address,
-        #"location": restaurant_location,
-        #"latitude": restaurant_lat,
-        #"longitude": restaurant_lon,
         "telephone": restaurant_phone,
         "website": restaurant_website,
         "average_rating": restaurant_rating,
-        "address_id": address_id
+        "address_id": index
     }
 
     restaurants.append(restaurant_info)
@@ -143,12 +181,15 @@ for link in restaurant_links:
     addresses.append(address_info)
 
     # Increment the counter
-    counter += 1
-    address_id += 1
+    counter_restaurants += 1
+    index += 1
 
 # Save the list of restaurant dictionaries to a JSON file
-with open('restaurants.json', 'w', encoding='utf-8') as f:
-    json.dump(restaurants, f, ensure_ascii=False, indent=4)
+#with open('restaurants.json', 'w', encoding='utf-8') as f:
+#   json.dump(restaurants, f, ensure_ascii=False, indent=4)
 
-with open('addresses.json', 'w', encoding='utf-8') as f:
-    json.dump(addresses, f, ensure_ascii=False, indent=4)
+#with open('restaurant_images.json', 'w', encoding='utf-8') as f:
+#    json.dump(restaurant_images, f, ensure_ascii=False, indent=4)
+
+#with open('addresses.json', 'w', encoding='utf-8') as f:
+#    json.dump(addresses, f, ensure_ascii=False, indent=4)

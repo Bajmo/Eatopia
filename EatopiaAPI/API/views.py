@@ -1,13 +1,14 @@
-from django.contrib.auth import authenticate, get_user_model
-from django.contrib.auth.hashers import make_password
-from django.http import Http404, JsonResponse
+import datetime
+
+import jwt
+from django.contrib.auth import authenticate
 from django.shortcuts import get_object_or_404
-from django.views.decorators.csrf import csrf_exempt
 from requests import Response
 from rest_framework import status
-from rest_framework.authtoken.models import Token
+from rest_framework.exceptions import AuthenticationFailed
 from rest_framework.response import Response
 from rest_framework.views import APIView
+from rest_framework_simplejwt.tokens import AccessToken
 
 from .models import Address, Restaurant
 from .serializers import *
@@ -17,7 +18,8 @@ from .serializers import ClientUserSerializer
 class RestaurantList(APIView):
     def get(self, request, format=None):
         restaurants = Restaurant.objects.all()
-        serializer = RestaurantSerializer(restaurants, many=True)
+        serializer = RestaurantSerializer(
+            restaurants, many=True, context={'user': request.user})
         return Response(serializer.data)
 
     def post(self, request, format=None):
@@ -26,11 +28,12 @@ class RestaurantList(APIView):
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-    
+
+
 class RestaurantDetail(APIView):
     def get_object(self, pk):
         return get_object_or_404(Restaurant, pk=pk)
-        
+
     def get(self, request, pk, format=None):
         restaurant = self.get_object(pk)
         serializer = RestaurantSerializer(restaurant)
@@ -48,8 +51,9 @@ class RestaurantDetail(APIView):
         restaurant = self.get_object(pk)
         restaurant.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
-    
-class AddressList(APIView):     
+
+
+class AddressList(APIView):
     def get(self, request, format=None):
         addresses = Address.objects.all()
         serializer = AddressSerializer(addresses, many=True)
@@ -62,88 +66,69 @@ class AddressList(APIView):
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-class CreateClientUserView(APIView):
+
+class ClientUserSignUpView(APIView):
     def post(self, request):
-        data = request.data
-
-        # Check if the password is provided
-        if 'password' not in data:
-            return Response({'detail': 'Password is required'}, status=status.HTTP_400_BAD_REQUEST)
-
-        # Hash the password
-        data['password'] = make_password(data['password'])
-
-        serializer = ClientUserSerializer(data=data)
+        serializer = ClientUserSerializer(data = request.data)
 
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         else:
-            # Check if the username is already taken
             if 'username' in serializer.errors and 'unique' in serializer.errors['username'][0].lower():
                 return Response({'detail': 'Username is already taken'}, status=status.HTTP_400_BAD_REQUEST)
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-    
-class ClientUserLogin(APIView):
+
+class ClientUserSignInView(APIView):
     def post(self, request):
-        # Get the username and password from the request data
-        username = request.data.get('username')
-        password = request.data.get('password')
+        username = request.data['username']
+        password = request.data['password']
 
-        # Check if the username and password are provided
-        if not username or not password:
-            return Response({'detail': 'Username and password are required'}, status=status.HTTP_400_BAD_REQUEST)
+        client_user = ClientUser.objects.filter(username=username).first()
 
-        # Authenticate the user
-        user = authenticate(username=username, password=password)
+        if client_user is None:
+            raise AuthenticationFailed('User not found!')
+        
+        if not client_user.check_password(password):
+            raise AuthenticationFailed('Incorrect password!')
+        
+        payload = {
+            'id': client_user.id,
+            'exp': datetime.datetime.utcnow() + datetime.timedelta(minutes=60),
+            'iat': datetime.datetime.utcnow()
+        }
 
-        # Check if the authentication was successful
-        if not user:
-            return Response({'detail': 'Invalid username or password'}, status=status.HTTP_401_UNAUTHORIZED)
+        token = jwt.encode(payload, 'secret', algorithm='HS256')
 
-        # Generate a token for the user
-        token, created = Token.objects.get_or_create(user=user)
-        print(token.key)
-        # Return the token and user data
-        return Response({'token': token.key, 'user': ClientUserSerializer(user).data})
+        response = Response()
+        response.set_cookie(key='jwt', value=token, httponly=True)
 
-def index(request):
-    data = {'message': 'Welcome to my API'}
-    return JsonResponse(data)
+        return response
 
-def welcome(request):
-    data = {'message': 'Welcome to my API'}
-    return JsonResponse(data)
+class ClientUserView(APIView):
+    def get(self, request):
+        token = request.COOKIES.get('jwt')
 
-def profile(request):
-    data = {'message': 'User profile data'}
-    return JsonResponse(data)
+        if not token:
+            raise AuthenticationFailed('Unauthenticated!')
+        
+        try:
+            payload = jwt.decode(token, 'secret', algorithms=['HS256'])
+        except jwt.ExpiredSignatureError:
+            raise AuthenticationFailed('Unauthenticated!')
+        
+        client_user = ClientUser.objects.filter(id=payload['id']).first()
+        serializer = ClientUserSerializer(client_user)
 
-def wishlist(request):
-    data = {'message': 'Wishlist data'}
-    return JsonResponse(data)
+        return Response(serializer.data)
+    
+class ClientUserSignOutView(APIView):
+    def post(self, request):
+        response = Response()
+        response.delete_cookie('jwt')
+        response.data = {
+            'message': 'Sign out successful!'
+        }
 
-def cuisines(request):
-    data = {'message': 'List of all cuisines'}
-    return JsonResponse(data)
-
-def view_cuisine(request, pk):
-    data = {'message': f'Cuisine with ID {pk}'}
-    return JsonResponse(data)
-
-def edit_cuisine(request, pk):
-    data = {'message': f'Edit cuisine with ID {pk}'}
-    return JsonResponse(data)
-
-def delete_cuisine(request, pk):
-    data = {'message': f'Delete cuisine with ID {pk}'}
-    return JsonResponse(data)
-
-def sign_in(request):
-    data = {'message': 'Sign in'}
-    return JsonResponse(data)
-
-def sign_up(request):
-    data = {'message': 'Sign up'}
-    return JsonResponse(data)
+        return response
