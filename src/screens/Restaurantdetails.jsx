@@ -87,7 +87,7 @@ const Restaurantdetails = () => {
           </p>
         </div>
         <div className="w-1/2 mt-12 flex justify-center gap-4">
-          <div className="">
+          
             <MapContainer center={[31.623075, -7.966311]} zoom={13}>
               <TileLayer
                 attribution="&copy; OpenStreetMap contributors"
@@ -97,9 +97,9 @@ const Restaurantdetails = () => {
                 <Popup>{restaurant.name}</Popup>
               </Marker>
             </MapContainer>
-          </div>
+          
 
-          <div className="bg-zinc-100 rounded-2xl p-4">
+          <div className="bg-zinc-100 rounded-2xl p-4 w-1/2">
             <span className="font-bold">Description</span>
             <p>{restaurant.description}</p>
           </div>
