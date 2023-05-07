@@ -14,14 +14,11 @@ import "leaflet/dist/leaflet.css";
 const Restaurantdetails = () => {
   const [restaurant, setRestaurant] = useState([]);
   const [address, setAddress] = useState([]);
-  const [latitude, setLatitude] = useState([]);
-  const [longitude, setLongitude] = useState([]);
+  const [latitude, setLatitude] = useState(31.623075);
+  const [longitude, setLongitude] = useState(-7.966311);
   const { id } = useParams();
   const [isInWishlist, setIsInWishlist] = useState(false);
   const heartIcon = isInWishlist ? RHeart : Heart;
-
-  setLatitude(31.623075);
-  setLongitude(-7.966311);
 
   // useEffect to fetch restaurants
   useEffect(() => {
@@ -47,7 +44,7 @@ const Restaurantdetails = () => {
         }
       }
     };
-    
+
     fetchRestaurant();
     console.log(restaurant);
   }, [id]);
