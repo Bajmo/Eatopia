@@ -21,14 +21,14 @@ const Navbar = () => {
       </div>
       
       <div className="flex items-center">
-      <button className="bg-zinc-100 gap-2 flex items-center px-5 text-sm rounded-full py-3 mr-7">
+      <button className="bg-zinc-100 gap-2 flex items-center px-5 text-sm rounded-full py-3 mr-4">
       <img className="w-5" src={Map} />
         Specify Location
       </button>
-        <div className="flex items-center mr-7">
+        <button className="flex bg-zinc-100 items-center mr-5 px-6 py-3 rounded-full">
           <img className="w-5" src={Heart} />
           <p className="text-sm ml-2">Wishlist</p>
-        </div>
+        </button>
         <img className="w-5" src={User} />
       </div>
     </div>
