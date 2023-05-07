@@ -12,6 +12,7 @@ import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 
 const Restaurantdetails = () => {
+  const [more, setMore] = useState(false);
   const [restaurant, setRestaurant] = useState([]);
   const [address, setAddress] = useState([]);
   const [latitude, setLatitude] = useState(31.623075);
@@ -87,21 +88,35 @@ const Restaurantdetails = () => {
           </p>
         </div>
         <div className="mt-12 flex justify-center gap-4 w-4/6">
-          
-            <MapContainer center={[31.623075, -7.966311]} zoom={13}>
-              <TileLayer
-                attribution="&copy; OpenStreetMap contributors"
-                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-              />
-              <Marker position={[latitude, longitude]} icon={myIcon}>
-                <Popup>{restaurant.name}</Popup>
-              </Marker>
-            </MapContainer>
-          
+          <MapContainer center={[31.623075, -7.966311]} zoom={13}>
+            <TileLayer
+              attribution="&copy; OpenStreetMap contributors"
+              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+            />
+            <Marker position={[latitude, longitude]} icon={myIcon}>
+              <Popup>{restaurant.name}</Popup>
+            </Marker>
+          </MapContainer>
 
           <div className="bg-zinc-100 rounded-2xl p-4 w-1/2">
             <span className="font-bold">Description</span>
-            <p>{restaurant.description}</p>
+            {restaurant && restaurant.description ? (
+              more ? (
+                <p>{restaurant.description}</p>
+              ) : (
+                <p>
+                  {restaurant.description.slice(0, 425)}
+                  <span
+                    onClick={() => setMore(true)}
+                    className="text-gray-500 cursor-pointer"
+                  >
+                    ...more
+                  </span>
+                </p>
+              )
+            ) : (
+              <p>Loading description...</p>
+            )}
           </div>
         </div>
       </div>
