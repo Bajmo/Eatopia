@@ -3,6 +3,7 @@ import Navbar from "../components/Navbar";
 import Restaurantcard from "../components/Restaurantcard";
 import { useNavigate } from "react-router-dom";
 import AuthContext from "../auth/AuthContext";
+import { Checkbox, Col, InputNumber, Row, Slider, Space } from "antd";
 
 const Homepage = () => {
   const [restaurants, setRestaurants] = useState([]);
@@ -43,12 +44,56 @@ const Homepage = () => {
     })();
   });
 
+  const onChange = (e) => {
+    console.log(`checked = ${e.target.checked}`);
+  };
+
+  const [inputValue, setInputValue] = useState(1);
+  const onChangee = (newValue) => {
+    setInputValue(newValue);
+  };
+
+  const Categories = ["Asian", "Morrocan", "French", "Turkish"];
   return (
     <div>
       <Navbar />
       <div className="flex h-screen">
         <div className="w-60 border-r p-5">
-          <p className="text-black text-sm">Categories</p>
+          <div>
+            <p className="text-black text-sm font-extrabold">Categories</p>
+            {Categories.map((e) => (
+              <Checkbox onChange={onChange}>{e}</Checkbox>
+            ))}
+          </div>
+          <div>
+            <p className="text-black text-sm font-extrabold mt-16">Range</p>
+
+            <Row>
+              <Col span={12}>
+                <Slider
+                  min={1}
+                  max={10}
+                  onChange={onChangee}
+                  value={typeof inputValue === "number" ? inputValue : 0}
+                  style={{
+                    width: "100px",
+                  }}
+                />
+              </Col>
+              <Col span={4}>
+                <InputNumber
+                  min={1}
+                  max={20}
+                  style={{
+                    width: "40px",
+                    margin: "0px 50px",
+                  }}
+                  value={inputValue}
+                  onChange={onChangee}
+                />
+              </Col>
+            </Row>
+          </div>
         </div>
         <div className="w-full p-7">
           <p className="text-black text-lg px-72">
