@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import "../css/login.css";
 import Logo from "../assets/logo.png";
-import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
+import { Navigate } from "react-router-dom";
 
 const Login = () => {
   const [username, setUsername] = useState("");
@@ -11,6 +11,7 @@ const Login = () => {
   const [usernameError, setUsernameError] = useState("");
   const [passwordError, setPasswordError] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const [redirect, setRedirect] = useState(false);
 
   function validateInputs() {
     let valid = true;
@@ -29,54 +30,30 @@ const Login = () => {
     return valid;
   }
 
-  const handleSubmit = async (event) => {
-    event.preventDefault(); // prevent default form submission
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    
     if (!validateInputs()) {
       return;
     }
-    try {
-      // Authenticate the user and retrieve the token
-      const response = await authenticateUser(username, password);
-  
-      // Set the token in the local storage
-      localStorage.setItem("token", response.data.token);
-  
-      // Redirect the user to the dashboard page
-      window.location.href = "/";
-    } catch (error) {
-      console.error(error);
-      alert("Invalid username or password");
-    }
-  };
-
-  async function authenticateUser(username, password) {
-    try {
-      const body = {
-        "username": username,
-        "password": password
-      };
-  
-      // Send a POST request to the ClientUserLogin endpoint to authenticate the user
-      const response = await axios.post("http://localhost:8000/signin", body, {
-        headers: {
-          "Content-Type": "application/json",
-          "Authorization": `Bearer ${localStorage.getItem("token")}`
-        }
+    else {
+      await fetch("http://localhost:8000/api/signin", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        credentials: "include",
+        body: JSON.stringify({
+          username,
+          password
+        })
       });
   
-      // Check if the response contains an error
-      if (response.data.detail) {
-        throw new Error(response.data.detail);
-      }
-  
-      // Return the response
-      return response;
-    } catch (error) {
-      console.error(error);
-      throw error;
+      setRedirect(true);
     }
   }
-  
+
+  if (redirect) {
+    return <Navigate to="/" />;
+  }
 
   return (
     <div className="loginpage flex items-center justify-center">
@@ -92,7 +69,9 @@ const Login = () => {
             type="text"
             placeholder="Username"
           />
-          {usernameError && <p className="mt-1 text-xs text-red-500">{usernameError}</p>}
+          {usernameError && (
+            <p className="mt-1 text-xs text-red-500">{usernameError}</p>
+          )}
           <div className="relative mt-2">
             <input
               onChange={(e) => setPassword(e.target.value)}
@@ -105,10 +84,15 @@ const Login = () => {
               className="absolute top-1/2 right-0 transform -translate-y-1/2 mr-4"
               onClick={() => setShowPassword(!showPassword)}
             >
-              <FontAwesomeIcon className="bg-white" icon={showPassword ? faEyeSlash : faEye} />
+              <FontAwesomeIcon
+                className="bg-white"
+                icon={showPassword ? faEyeSlash : faEye}
+              />
             </button>
           </div>
-          {passwordError && <p className="mt-1 text-xs text-red-500">{passwordError}</p>}
+          {passwordError && (
+            <p className="mt-1 text-xs text-red-500">{passwordError}</p>
+          )}
 
           <button
             type="submit" // change type to submit

@@ -1,8 +1,7 @@
-import React from "react";
-import { useState } from "react";
+import React, {SyntheticEvent, useState} from "react";
 import "../css/login.css";
 import Logo from "../assets/logo.png";
-import axios from "axios";
+import {Navigate} from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 
@@ -17,8 +16,9 @@ const Register = () => {
   const [usernameError, setUsernameError] = useState("");
   const [emailError, setEmailError] = useState("");
   const [passwordError, setPasswordError] = useState("");
-  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
+  const showSuccessMessage = useState(false);
   const [showPassword, setShowPassword] = useState(false);
+  const [redirect, setRedirect] = useState(false);
   const emailRegex = /\S+@\S+\.\S+/;
 
   function validateInputs() {
@@ -62,36 +62,27 @@ const Register = () => {
     return valid;
   }
 
-  const handleSubmit = (event) => {
-    event.preventDefault(); // prevent default form submission
-    if (!validateInputs()) {
-      return;
-    }
-    const body = {
-      first_name: firstname,
-      last_name: lastname,
-      username: username,
-      email: email,
-      password: password,
-    };
-    axios
-      .post("http://127.0.0.1:8000/signup", body)
-      .then((response) => {
-        setShowSuccessMessage(true); // set success message to show
-        setTimeout(() => {
-          setShowSuccessMessage(false); // remove success message after 3 seconds
-          window.location.href = "/login"; // redirect to login page
-        }, 2000);
-      })
-      .catch((error) => {
-        if (error.response && error.response.data.username) {
-          setUsernameError("Username is already taken");
-        } else {
-          console.log(error);
-        }
-      });
-    console.log(body);
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    await fetch("http://localhost:8000/api/signup", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        firstname,
+        lastname,
+        username,
+        email,
+        password,
+      }),
+    });
+
+    setRedirect(true);
   };
+
+  if (redirect) {
+    return <Navigate to = "/login" />;
+  }
 
   return (
     <div className="loginpage flex items-center justify-center">
