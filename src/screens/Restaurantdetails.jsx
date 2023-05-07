@@ -59,7 +59,7 @@ const Restaurantdetails = () => {
   });
 
   return (
-    <div>
+    <div className="">
       <Navbar />
       <div className="flex flex-col justify-center items-center my-6">
         <img
@@ -117,6 +117,31 @@ const Restaurantdetails = () => {
             ) : (
               <p>Loading description...</p>
             )}
+          </div>
+        </div>
+      </div>
+      <hr className="" />
+      <div className="h-full flex justify-center m-6">
+        <div className="w-4/6 flex gap-4">
+          <div className="w-1/2">
+            <div className="w-full flex flex-col items-center bg-zinc-100 rounded-xl p-5">
+              <h3 className="">Mehdi Fassi Fihri</h3>
+
+              <Rate disabled allowHalf value={4} />
+              <p>
+                Le Lorem Ipsum est simplement du faux texte employé dans la
+                composition et la mise en page avant impression. Le Lorem Ipsum
+                est le faux texte standard de l'imprimerie depuis les années
+                1500, quand un imprimeur anonyme assembla ensemble des morceaux
+                de texte pour réaliser un livre.
+              </p>
+            </div>
+          </div>
+          <div className="w-1/2 h-52 bg-zinc-100 rounded-xl p-4">
+            <p className="text-gray-400">Your Review</p>
+            <textarea placeholder="Write something..." className='placeholder:text-gray-400 rounded-xl p-3 mt-5' rows="4" cols="50">
+        
+            </textarea>
           </div>
         </div>
       </div>

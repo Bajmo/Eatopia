@@ -77,6 +77,7 @@ const Homepage = () => {
                   value={typeof inputValue === "number" ? inputValue : 0}
                   style={{
                     width: "100px",
+                    
                   }}
                 />
               </Col>
