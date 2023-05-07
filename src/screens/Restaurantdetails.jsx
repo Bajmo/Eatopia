@@ -86,7 +86,7 @@ const Restaurantdetails = () => {
             Opening hours - {restaurant.opening_hours}
           </p>
         </div>
-        <div className="w-1/2 mt-12 flex justify-center gap-4">
+        <div className="mt-12 flex justify-center gap-4 w-4/6">
           
             <MapContainer center={[31.623075, -7.966311]} zoom={13}>
               <TileLayer
