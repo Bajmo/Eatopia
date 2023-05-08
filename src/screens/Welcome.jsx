@@ -9,8 +9,8 @@ import Droite from "../assets/droite.png";
 const Welcome = () => {
   return (
     <div>
-      <img className="absolute top-52 left-0 w-72" src={Sushi} />
-      <img className="absolute w-80 bottom-0 right-0" src={Burger} />
+      <img className="absolute top-52 left-0 w-80" src={Sushi} />
+      <img className="absolute w-96 bottom-0 right-0" src={Burger} />
       <div className="nav flex justify-between items-center px-32 py-4">
         <img className="w-24" src={Logo} />
         <div>
@@ -27,8 +27,8 @@ const Welcome = () => {
         </div>
       </div>
       <div className="flex flex-col items-center">
-        <div className="flex-row justify-center items-center my-auto">
-          <p className="text-center px-96 py-7 text-xl">
+        <div className="flex-row justify-center items-center my-24">
+          <p className="text-center px-96 py-7 text-2xl">
             Welcome to <span className="font-bold">Eatopia</span>, where we help
             you find the perfect restaurant for any occasion. Get started now by
             localizing your radius on the map as well as food preferences, and
