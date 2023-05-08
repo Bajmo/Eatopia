@@ -31,17 +31,21 @@ const Restaurantdetails = () => {
           `http://127.0.0.1:8000/api/restaurant/${id}`
         ); // replace with your API endpoint
         const data = await response.json();
-        setRestaurant(data);
+        setRestaurant(data);        
       } catch (error) {
         console.error(error);
       }
+    };
+
+    const fetchRestaurantAddress = async () => {
       if (!restaurant === undefined) {
         try {
           const response = await fetch(
-            `http://127.0.0.1:8000/api/address/${restaurant.address}`
+            `http://127.0.0.1:8000/api/address/${restaurant.address.id}`
           ); // replace with your API endpoint
           const data = await response.json();
           setAddress(data);
+          console.log(data)
         } catch (error) {
           console.error(error);
         }
@@ -49,7 +53,7 @@ const Restaurantdetails = () => {
     };
 
     fetchRestaurant();
-    console.log(restaurant);
+    fetchRestaurantAddress();
   }, [id]);
 
   const myIcon = L.icon({
@@ -141,9 +145,9 @@ const Restaurantdetails = () => {
             <p className="mt-5">{restaurant.description}</p>
           </div>
         </div>
-        <div class="inline-flex items-center justify-center w-full">
-          <hr class="w-4/6 h-px my-8 border-0 bg-black" />
-          <span class="absolute px-3 font-bold text-2xl -translate-x-1/2 bg-white left-1/2">
+        <div className="inline-flex items-center justify-center w-full">
+          <hr className="w-4/6 h-px my-8 border-0 bg-black" />
+          <span className="absolute px-3 font-bold text-2xl -translate-x-1/2 bg-white left-1/2">
             Reviews
           </span>
         </div>
@@ -194,13 +198,13 @@ const Restaurantdetails = () => {
             <div className="flex justify-center mt-5">
               <button
                 className="bg-black gap-2 flex items-center px-5 text-sm text-white rounded-full py-3 mr-4"
-                onClick=""
+                
               >
                 Submit
               </button>
               <button
                 className="bg-zinc-200 gap-2 flex items-center px-5 text-sm rounded-full py-3 mr-4 border-2"
-                onClick=""
+                
               >
                 Clear
               </button>

@@ -14,7 +14,9 @@ const Restaurantcard = (props) => {
       <div className="bg-white inline-block absolute right-3 top-3 rounded-full p-2 transition-transform transform hover:scale-125">
         <img className="w-5" src={Heart} />
       </div>
-      <img className="rounded-3xl" src={Restaurant} />
+      <div className="flex justify-center">
+      <img className="rounded-3xl" src={props.image} style={{width: 500}} />
+      </div>
       <div className="mt-2">
         <span className="font-bold text-2xl">{props.title}</span>
       </div>

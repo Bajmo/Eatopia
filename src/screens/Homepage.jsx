@@ -17,7 +17,7 @@ const Homepage = () => {
   const [restaurants, setRestaurants] = useState([]);
   const [userFirstName, setUserFirstName] = useState(null);
   const { isAuthenticated } = useContext(AuthContext);
-  const [search, setSearch] = useState('');
+  const [search, setSearch] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
 
   const filteredRestaurants = restaurants.filter((restaurant) =>
@@ -32,7 +32,7 @@ const Homepage = () => {
     indexOfFirstRestaurant,
     indexOfLastRestaurant
   );
-  
+
   const handleSearchChange = (e) => {
     setSearch(e.target.value);
     setCurrentPage(1); // Reset current page when search changes
@@ -58,6 +58,22 @@ const Homepage = () => {
       .then((response) => response.json())
       .then((data) => {
         setRestaurants(data);
+
+        for (let i = 0; i < data.length; i++) {
+          fetch("http://127.0.0.1:8000/api/restaurant_images/" + data[i].id)
+            .then((response) => response.json())
+            .then((imagesData) => {
+              // Update the specific restaurant object with the fetched image data
+              setRestaurants((prevRestaurants) =>
+                prevRestaurants.map((restaurant) =>
+                  restaurant.id === data[i].id
+                    ? { ...restaurant, image: imagesData[0].url }
+                    : restaurant
+                )
+              );
+            })
+            .catch((error) => console.error(error));
+        }
       })
       .catch((error) => console.error(error));
   }, []);
@@ -73,7 +89,7 @@ const Homepage = () => {
 
       setUserFirstName(content.first_name);
     })();
-  });
+  }, []);
 
   const onChange = (e) => {
     console.log(`checked = ${e.target.checked}`);
@@ -84,7 +100,15 @@ const Homepage = () => {
     setInputValue(newValue);
   };
 
-  const Categories = ["Asian", "Morrocan", "French", "Turkish", "American", "Grill", "Italian"];
+  const Categories = [
+    "Asian",
+    "Morrocan",
+    "French",
+    "Turkish",
+    "American",
+    "Grill",
+    "Italian",
+  ];
   return (
     <div>
       <Navbar onSearchChange={handleSearchChange} />
@@ -92,8 +116,9 @@ const Homepage = () => {
         <div className="w-60 p-5">
           <p className="text-black text-sm font-extrabold mb-2">Cuisines</p>
           <div className="flex flex-col">
-            {Categories.map((e) => (
+            {Categories.map((e, index) => (
               <Checkbox
+                key={index}
                 className=""
                 onChange={onChange}
                 style={{ marginInlineStart: 0 }}
@@ -131,7 +156,7 @@ const Homepage = () => {
           </div>
         </div>
         <div className="w-full p-7">
-          <p className="text-black text-lg px-72 text-center">
+          <div className="text-black text-lg px-72 text-center">
             {userFirstName ? (
               <p>
                 Hello <span className="font-bold">{userFirstName}</span>!
@@ -140,13 +165,17 @@ const Homepage = () => {
               ""
             )}
             Find your Eatopia!
-          </p>
+          </div>
           <div className="flex justify-center">
             <div className="flex justify-between flex-wrap">
               {currentRestaurants.map((e) => (
-                <div className="w-1/3 mb-7 p-7 rounded-3xl transition-transform transform hover:border-2 hover:bg-white hover:scale-105 duration-300 hover:shadow-2xl">
+                <div
+                  key={e.id}
+                  className="w-1/3 mb-7 p-7 rounded-3xl transition-transform transform hover:border-2 hover:bg-white hover:scale-105 duration-300 hover:shadow-2xl"
+                >
                   <Restaurantcard
                     id={e.id}
+                    image={e.image}
                     title={e.name}
                     rate={e.average_rating}
                   />
