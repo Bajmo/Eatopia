@@ -5,9 +5,11 @@ import Navbar from "../components/Navbar";
 import Heart from "../assets/heart.png";
 import RHeart from "../assets/redheart.png";
 import Website from "../assets/website.png";
+import Restaurant from "../assets/restaurant.jpg";
+
 import Time from "../assets/tiime.png";
 import Tel from "../assets/telephoner.png";
-import { Rate } from "antd";
+import { Rate, Carousel } from "antd";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 
@@ -58,6 +60,10 @@ const Restaurantdetails = () => {
     popupAnchor: [0, -38],
   });
 
+  const onChange = (currentSlide) => {
+    console.log(currentSlide);
+  };
+
   return (
     <div className="">
       <Navbar />
@@ -67,13 +73,50 @@ const Restaurantdetails = () => {
           src={heartIcon}
           onClick={() => setIsInWishlist(!isInWishlist)}
         />
-        <h1 className="text-6xl">{restaurant.name}</h1>
-        <Rate disabled allowHalf value={restaurant.average_rating} />
-        <div className="flex items-center gap-8 mt-12">
+        <h1
+          className="text-6xl p-2"
+          style={{
+            backgroundImage:
+              "linear-gradient(90deg, hsla(0, 2%, 8%, 1) 0%, hsla(353, 73%, 43%, 1) 100%)",
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
+          }}
+        >
+          {restaurant.name}
+        </h1>
+
+        <Rate disabled allowHalf value={restaurant.average_rating} className="text-black"/>
+        <div className="flex items-center mt-3">
+            <span className="text-sm">{restaurant.cuisine}</span>
+          </div>
+        <div className="w-2/5 my-6">
+          <Carousel effect="fade" afterChange={onChange}>
+            <div>
+              <img className="rounded-3xl" src={Restaurant}/>
+            </div>
+            <div>
+              <img className="rounded-3xl" src={Restaurant}/>
+            </div>
+            <div>
+              <img className="rounded-3xl" src={Restaurant}/>
+            </div>
+            <div>
+              <img className="rounded-3xl" src={Restaurant}/>
+            </div>
+          </Carousel>
+        </div>
+
+        <div className="flex items-center gap-20">
           <div className="flex items-center">
             <img className="w-5 mr-1" src={Tel} />
             <span className="text-sm">{restaurant.telephone}</span>
           </div>
+          <div className="flex items-center">
+          <img className="w-5" src={Time} />
+          <p className="ml-1 text-sm">
+            Opening hours - {restaurant.opening_hours}
+          </p>
+        </div>
           <a href={restaurant.website} target="_blank">
             <div className="flex items-center cursor-pointer">
               <img className="w-5" src={Website} />
@@ -81,13 +124,8 @@ const Restaurantdetails = () => {
             </div>
           </a>
         </div>
-        <div className="flex items-center mt-2">
-          <img className="w-5" src={Time} />
-          <p className="ml-1 text-sm">
-            Opening hours - {restaurant.opening_hours}
-          </p>
-        </div>
-        <div className="mt-12 flex justify-center gap-4 w-4/6">
+        
+        <div className="mt-6 flex justify-center gap-4 w-4/6">
           <MapContainer center={[31.623075, -7.966311]} zoom={13}>
             <TileLayer
               attribution="&copy; OpenStreetMap contributors"
@@ -98,37 +136,24 @@ const Restaurantdetails = () => {
             </Marker>
           </MapContainer>
 
-          <div className="bg-zinc-100 rounded-2xl p-4 w-1/2">
-            <span className="font-bold">Description</span>
-            {restaurant && restaurant.description ? (
-              more ? (
-                <p>{restaurant.description}</p>
-              ) : (
-                <p>
-                  {restaurant.description.slice(0, 425)}
-                  <span
-                    onClick={() => setMore(true)}
-                    className="text-gray-500 cursor-pointer"
-                  >
-                    ...more
-                  </span>
-                </p>
-              )
-            ) : (
-              <p>Loading description...</p>
-            )}
+          <div className="w-1/2 h-full flex mb-5 flex-col items-center bg-zinc-200 rounded-xl p-5">
+            <h3 className="font-bold">Description</h3>
+            <p className="mt-5">{restaurant.description}</p>
           </div>
         </div>
-      </div>
-      <hr className="" />
-      <div className="h-full flex justify-center m-6">
+        <div class="inline-flex items-center justify-center w-full">
+          <hr class="w-4/6 h-px my-8 border-0 bg-black" />
+          <span class="absolute px-3 font-bold text-2xl -translate-x-1/2 bg-white left-1/2">
+            Reviews
+          </span>
+        </div>
         <div className="w-4/6 flex gap-4">
           <div className="w-1/2">
-            <div className="w-full flex flex-col items-center bg-zinc-100 rounded-xl p-5">
-              <h3 className="">Mehdi Fassi Fihri</h3>
+            <div className="w-full flex mb-5 flex-col items-center bg-zinc-200 rounded-xl p-5">
+              <h3 className="font-bold">Anas Mourad</h3>
 
               <Rate disabled allowHalf value={4} />
-              <p>
+              <p className="mt-5">
                 Le Lorem Ipsum est simplement du faux texte employé dans la
                 composition et la mise en page avant impression. Le Lorem Ipsum
                 est le faux texte standard de l'imprimerie depuis les années
@@ -136,15 +161,54 @@ const Restaurantdetails = () => {
                 de texte pour réaliser un livre.
               </p>
             </div>
+            <div className="w-full flex mb-5 flex-col items-center bg-zinc-200 rounded-xl p-5">
+              <h3 className="font-bold">Mehdi Fassi Fihri</h3>
+
+              <Rate disabled allowHalf value={4} />
+              <p className="mt-5">
+                Le Lorem Ipsum est simplement du faux texte employé dans la
+                composition et la mise en page avant impression.
+              </p>
+            </div>
+            <div className="w-full flex mb-5 flex-col items-center bg-zinc-200 rounded-xl p-5">
+              <h3 className="font-bold">Mohamed Ameksa</h3>
+
+              <Rate disabled allowHalf value={4} />
+              <p className="mt-5">
+                Le Lorem Ipsum est simplement du faux texte employé dans la
+                composition et la mise en page avant impression. Le Lorem Ipsum
+                est le faux texte standard de l'imprimerie depuis les années
+                1500.
+              </p>
+            </div>
           </div>
-          <div className="w-1/2 h-52 bg-zinc-100 rounded-xl p-4">
-            <p className="text-gray-400">Your Review</p>
-            <textarea placeholder="Write something..." className='placeholder:text-gray-400 rounded-xl p-3 mt-5' rows="4" cols="50">
-        
-            </textarea>
+          <div className="w-1/2">
+            <div className="h-50 bg-zinc-200 rounded-xl p-4 flex flex-col items-center">
+              <p className="font-bold">Write a review</p>
+              <Rate allowHalf />
+              <textarea
+                placeholder="Describe your experience..."
+                className="block placeholder:text-gray-400 rounded-xl p-3 mt-5 w-full"
+              ></textarea>
+            </div>
+            <div className="flex justify-center mt-5">
+              <button
+                className="bg-black gap-2 flex items-center px-5 text-sm text-white rounded-full py-3 mr-4"
+                onClick=""
+              >
+                Submit
+              </button>
+              <button
+                className="bg-zinc-200 gap-2 flex items-center px-5 text-sm rounded-full py-3 mr-4 border-2"
+                onClick=""
+              >
+                Clear
+              </button>
+            </div>
           </div>
         </div>
       </div>
+      <hr className="" />
     </div>
   );
 };

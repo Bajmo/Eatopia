@@ -16,10 +16,11 @@ const Register = () => {
   const [usernameError, setUsernameError] = useState("");
   const [emailError, setEmailError] = useState("");
   const [passwordError, setPasswordError] = useState("");
-  const showSuccessMessage = useState(false);
+  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [redirect, setRedirect] = useState(false);
   const emailRegex = /\S+@\S+\.\S+/;
+  
 
   function validateInputs() {
     let valid = true;
@@ -64,21 +65,31 @@ const Register = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    await fetch("http://localhost:8000/api/signup", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        firstname,
-        lastname,
-        username,
-        email,
-        password,
-      }),
-    });
-
-    setRedirect(true);
+  
+    if (validateInputs()) {
+      try {
+        await fetch("http://localhost:8000/api/signup", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            firstname,
+            lastname,
+            username,
+            email,
+            password,
+          }),
+        });
+        setShowSuccessMessage(true); // set success message to show
+        setTimeout(() => {
+          setShowSuccessMessage(false); // remove success message after 2 seconds
+          setRedirect(true); // set redirect state to true after 2 seconds
+        }, 2000);
+      } catch (error) {
+        console.error('Error during signup:', error);
+      }
+    }
   };
+  
 
   if (redirect) {
     return <Navigate to = "/login" />;

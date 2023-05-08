@@ -3,13 +3,44 @@ import Navbar from "../components/Navbar";
 import Restaurantcard from "../components/Restaurantcard";
 import { useNavigate } from "react-router-dom";
 import AuthContext from "../auth/AuthContext";
-import { Checkbox, Col, InputNumber, Row, Slider, Space } from "antd";
+import {
+  Checkbox,
+  Col,
+  InputNumber,
+  Row,
+  Slider,
+  Space,
+  Pagination,
+} from "antd";
 
 const Homepage = () => {
   const [restaurants, setRestaurants] = useState([]);
   const [userFirstName, setUserFirstName] = useState(null);
   const { isAuthenticated } = useContext(AuthContext);
+  const [search, setSearch] = useState('');
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const filteredRestaurants = restaurants.filter((restaurant) =>
+    restaurant.name.toLowerCase().includes(search.toLowerCase())
+  );
+
   const navigate = useNavigate();
+  const restaurantsPerPage = 6;
+  const indexOfLastRestaurant = currentPage * restaurantsPerPage;
+  const indexOfFirstRestaurant = indexOfLastRestaurant - restaurantsPerPage;
+  const currentRestaurants = filteredRestaurants.slice(
+    indexOfFirstRestaurant,
+    indexOfLastRestaurant
+  );
+  
+  const handleSearchChange = (e) => {
+    setSearch(e.target.value);
+    setCurrentPage(1); // Reset current page when search changes
+  };
+
+  const handlePageChange = (page) => {
+    setCurrentPage(page);
+  };
 
   // useEffect to fetch restaurants
   useEffect(() => {
@@ -53,41 +84,44 @@ const Homepage = () => {
     setInputValue(newValue);
   };
 
-  const Categories = ["Asian", "Morrocan", "French", "Turkish"];
+  const Categories = ["Asian", "Morrocan", "French", "Turkish", "American", "Grill", "Italian"];
   return (
     <div>
-      <Navbar />
-      <div className="flex h-screen">
-        <div className="w-60 border-r p-5">
-          <div>
-            <p className="text-black text-sm font-extrabold">Categories</p>
+      <Navbar onSearchChange={handleSearchChange} />
+      <div className="flex">
+        <div className="w-60 p-5">
+          <p className="text-black text-sm font-extrabold mb-2">Cuisines</p>
+          <div className="flex flex-col">
             {Categories.map((e) => (
-              <Checkbox onChange={onChange}>{e}</Checkbox>
+              <Checkbox
+                className=""
+                onChange={onChange}
+                style={{ marginInlineStart: 0 }}
+              >
+                {e}
+              </Checkbox>
             ))}
           </div>
           <div>
-            <p className="text-black text-sm font-extrabold mt-16">Range</p>
+            <p className="text-black text-sm font-extrabold mt-10 mb-2">
+              Range in KMs
+            </p>
 
-            <Row>
-              <Col span={12}>
+            <Row className="flex justify-between">
+              <Col span={15}>
                 <Slider
                   min={1}
                   max={10}
                   onChange={onChangee}
                   value={typeof inputValue === "number" ? inputValue : 0}
-                  style={{
-                    width: "100px",
-                    
-                  }}
                 />
               </Col>
-              <Col span={4}>
+              <Col className="md:self-center">
                 <InputNumber
                   min={1}
-                  max={20}
+                  max={10}
                   style={{
-                    width: "40px",
-                    margin: "0px 50px",
+                    width: "50px",
                   }}
                   value={inputValue}
                   onChange={onChangee}
@@ -97,7 +131,7 @@ const Homepage = () => {
           </div>
         </div>
         <div className="w-full p-7">
-          <p className="text-black text-lg px-72">
+          <p className="text-black text-lg px-72 text-center">
             {userFirstName ? (
               <p>
                 Hello <span className="font-bold">{userFirstName}</span>!
@@ -105,12 +139,12 @@ const Homepage = () => {
             ) : (
               ""
             )}
-            Based on your query, we recommend the following restaurants:
+            Find your Eatopia!
           </p>
-          <div className="flex justify-center mt-7">
+          <div className="flex justify-center">
             <div className="flex justify-between flex-wrap">
-              {restaurants.map((e) => (
-                <div className="w-1/3 mb-7 p-7 rounded-3xl transition-transform transform hover:scale-105 duration-300 hover:shadow-2xl">
+              {currentRestaurants.map((e) => (
+                <div className="w-1/3 mb-7 p-7 rounded-3xl transition-transform transform hover:border-2 hover:bg-white hover:scale-105 duration-300 hover:shadow-2xl">
                   <Restaurantcard
                     id={e.id}
                     title={e.name}
@@ -119,6 +153,15 @@ const Homepage = () => {
                 </div>
               ))}
             </div>
+          </div>
+          <div className="flex justify-center">
+            <Pagination
+              defaultCurrent={1}
+              pageSize={restaurantsPerPage}
+              total={restaurants.length}
+              onChange={handlePageChange}
+              responsive={true}
+            />
           </div>
         </div>
       </div>
