@@ -1,0 +1,302 @@
+[
+    {
+        "name": "Terrasses Des Arts",
+        "cuisine": "Moroccan, Cafe, International",
+        "description": "No details available",
+        "opening_hours": "No opening hours available",
+        "telephone": "+212 696-442344",
+        "website": "http://www.lesterrassesdesarts.ma",
+        "average_rating": 5.0,
+        "address_id": 1
+    },
+    {
+        "name": "Medina Burger",
+        "cuisine": "American",
+        "description": "When western tradition meets Moroccan innovation. Medina Burger offers a variety of american smash burgers for the everyday burger lovers but also introduces signature burgers that are 100% new and innovative for the real thrill-seekers! With a cooperative collaboration between two chefs from across the seas, one with traditional moroccan cuisine and the other, a sauce&burger expert, they were able to create a trendsetting revolutionary Moroccan-American burger fusion, never seen before ! Come prepared for our signatures or you'll settle for tradition.",
+        "opening_hours": "12:00 PM - 12:00 AM",
+        "telephone": "+212 664-888278",
+        "website": "http://www.instagram.com/lemedinaburger/",
+        "average_rating": 5.0,
+        "address_id": 2
+    },
+    {
+        "name": "Lao Marrakech",
+        "cuisine": "International, Diner, WineBar",
+        "description": "No details available",
+        "opening_hours": "7:30 PM - 02:00 AM",
+        "telephone": "+212 662-868040",
+        "website": "http://www.lao-marrakech.com",
+        "average_rating": 5.0,
+        "address_id": 3
+    },
+    {
+        "name": "Poka",
+        "cuisine": "Asian, Thai, JapaneseFusion",
+        "description": "No details available",
+        "opening_hours": "No opening hours available",
+        "telephone": "+212 681-855574",
+        "website": "http://pokamarrakech.com/",
+        "average_rating": 5.0,
+        "address_id": 4
+    },
+    {
+        "name": "L'Ô A LA BOUCHE - Marrakech",
+        "cuisine": "French, Healthy, Gastropub",
+        "description": "No details available",
+        "opening_hours": "No opening hours available",
+        "telephone": "+212 666-383133",
+        "website": "http://loalabouche.ma",
+        "average_rating": 5.0,
+        "address_id": 5
+    },
+    {
+        "name": "Pointbar",
+        "cuisine": "Mediterranean, European",
+        "description": "In a quiet street of Guéliz is the Pointbar, an establishment that will not leave you indifferent! With its large interior spaces with refined and contemporary decoration, you will quickly feel at ease to enjoy a few tapas over a drink or enjoy delicious international cuisine during a meal with friends. You can also enjoy a huge tree-lined terrace to lounge on one of the sofas to the rhythm of the music played each evening by the resident DJ. We inform our dear customers that the restaurant is smoking.",
+        "opening_hours": "5:00 PM - 02:00 AM",
+        "telephone": "+212 600-015010",
+        "website": "http://www.pointbar-restaurant.com",
+        "average_rating": 5.0,
+        "address_id": 6
+    },
+    {
+        "name": "Eclipse Rooftop",
+        "cuisine": "French, European, Grill",
+        "description": "No details available",
+        "opening_hours": "12:00 PM - 11:00 PM",
+        "telephone": "+212 5 24376767",
+        "website": "https://www.riaddariamarrakech.com/",
+        "average_rating": 4.5,
+        "address_id": 7
+    },
+    {
+        "name": "L'Auberge Espagnole",
+        "cuisine": "Latin, Mediterranean",
+        "description": "No details available",
+        "opening_hours": "6:00 PM - 02:00 AM",
+        "telephone": "+212 5244-58913",
+        "website": "http://www.lauberge-espagnole-marrakech.com/",
+        "average_rating": 4.5,
+        "address_id": 8
+    },
+    {
+        "name": "Baromètre Marrakech",
+        "cuisine": "French, International, Mediterranean",
+        "description": "Le Baromètre is the first place in Marrakech dedicated to Mixology and creative mediteranean cuisine.",
+        "opening_hours": "12:00 AM - 01:00 A and M6:00 PM - 01:00 AM",
+        "telephone": "+212 666-886798",
+        "website": "http://www.lebarometre.net/",
+        "average_rating": 5.0,
+        "address_id": 9
+    },
+    {
+        "name": "Dar Chef",
+        "cuisine": "African, Moroccan, Healthy",
+        "description": "No details available",
+        "opening_hours": "09:00 AM - 11:00 PM",
+        "telephone": "+212 661-286859",
+        "website": "http://www.darchef.ma/",
+        "average_rating": 4.5,
+        "address_id": 10
+    },
+    {
+        "name": "Café Restaurant Dar L'hssira",
+        "cuisine": "African, Moroccan, MiddleEastern",
+        "description": "No details available",
+        "opening_hours": "11:00 AM - 11:00 PM",
+        "telephone": "+212 600-756845",
+        "website": "https://www.facebook.com/CafeResTaurantDarLhssira/",
+        "average_rating": 5.0,
+        "address_id": 11
+    },
+    {
+        "name": "La Table Ocre",
+        "cuisine": "Moroccan, Mediterranean",
+        "description": "Our restaurant is located in the Medina Mall Marrakech, and our design takes its cues from traditional Moroccan architecture, with a touch of modernity. Traditional cooking methods, recipes passed down through the generations, and the freshest, locally sourced products – these ingredients make up the heart and soul of La Table Ocre. Started by two young but passionate moroccans, La Table Ocre is a labour of love.",
+        "opening_hours": "12:00 PM - 12:00 AM",
+        "telephone": "+212 667-576209",
+        "website": "http://www.instagram.com/latableocre/",
+        "average_rating": 5.0,
+        "address_id": 12
+    },
+    {
+        "name": "Le Bled",
+        "cuisine": "Moroccan, International, Mediterranean",
+        "description": "No details available",
+        "opening_hours": "09:00 AM - 12:00 AM",
+        "telephone": "+212 608-081212",
+        "website": "http://www.lebledmarrakech.com",
+        "average_rating": 3.0,
+        "address_id": 13
+    },
+    {
+        "name": "Bazaar Café",
+        "cuisine": "African, Moroccan, Mediterranean",
+        "description": "No details available",
+        "opening_hours": "12:00 PM - 10:00 PM",
+        "telephone": "+212 5243-87283",
+        "website": "http://www.bazaarcafe.ma/",
+        "average_rating": 4.5,
+        "address_id": 14
+    },
+    {
+        "name": "Casa Lalla Restaurant",
+        "cuisine": "French, Moroccan, International",
+        "description": "No details available",
+        "opening_hours": "6:00 PM - 11:00 PM",
+        "telephone": "+212 674-984460",
+        "website": "http://www.casalalla-restaurant.com",
+        "average_rating": 5.0,
+        "address_id": 15
+    },
+    {
+        "name": "Fish house Al Aachabe",
+        "cuisine": "Moroccan, Mediterranean",
+        "description": "No details available",
+        "opening_hours": "12:00 AM - 11:00 PM",
+        "telephone": "+212 664-553381",
+        "website": "http://fish-house-al-aachabe.business.site/",
+        "average_rating": 5.0,
+        "address_id": 16
+    },
+    {
+        "name": "Fluffy",
+        "cuisine": "International, Spanish",
+        "description": "No details available",
+        "opening_hours": "09:00 AM - 11:00 PM",
+        "telephone": "+212 660-232405",
+        "website": "http://fluffymarrakech.com",
+        "average_rating": 5.0,
+        "address_id": 17
+    },
+    {
+        "name": "My Taher",
+        "cuisine": "Moroccan, Mediterranean",
+        "description": "No details available",
+        "opening_hours": "10:00 AM - 12:00 AM",
+        "telephone": "+212 661-142012",
+        "website": "https://maps.google.com/maps?saddr=&daddr=9+Rue+des+Banques%2C+Marrakech+40000+Morocco@31.62626,-7.986915",
+        "average_rating": 5.0,
+        "address_id": 18
+    },
+    {
+        "name": "Luma",
+        "cuisine": "International",
+        "description": "No details available",
+        "opening_hours": "No opening hours available",
+        "telephone": "+212 625-566566",
+        "website": "http://www.luma-marrakech.com",
+        "average_rating": 5.0,
+        "address_id": 19
+    },
+    {
+        "name": "La Palette Restaurant Marrakech",
+        "cuisine": "Moroccan, Mediterranean, European",
+        "description": "No details available",
+        "opening_hours": "6:00 PM - 12:00 AM",
+        "telephone": "+212 622-513311",
+        "website": "http://www.lapalette-restaurant.com",
+        "average_rating": 5.0,
+        "address_id": 20
+    },
+    {
+        "name": "Mazel مزال Cafe",
+        "cuisine": "Cafe, Healthy, StreetFood",
+        "description": "No details available",
+        "opening_hours": "oses in 5 min: ",
+        "telephone": "+212 661-662824",
+        "website": "http://www.instagram.com/mazel_marrakech/?hl=en",
+        "average_rating": 5.0,
+        "address_id": 21
+    },
+    {
+        "name": "Gm Cafe Gourmet",
+        "cuisine": "Italian, Japanese, Thai",
+        "description": "No details available",
+        "opening_hours": "08:00 AM - 12:00 AM",
+        "telephone": "+212 5244-33738",
+        "website": "http://gmcafe.ma",
+        "average_rating": 5.0,
+        "address_id": 22
+    },
+    {
+        "name": "Pepe Nero",
+        "cuisine": "Italian, Moroccan, Mediterranean",
+        "description": "PEPE NERO Restaurant Marrakech : A place of flavours on motion where the senses are constantly coddled Khalid and his team represent the same soul of a single ingredient: Excellence. This where I devote myself body and soul to my passion: cooking We strive to always be precise in our gestures, attentive to the oven, skilled with knives, a sharpened sense of smell, an eye to the market, intransigent with the quality of ingredients and demanding in the kitchen.The battle I fight every day with my team is the oldest in the world:That between the hand and fire.We created the sort of restaurant we would like to find ourselves..Pepe Nero was born to engage and satisfy our passion : Taste, without",
+        "opening_hours": "No opening hours available",
+        "telephone": "+212 5243-89067",
+        "website": "http://www.pepenero-marrakech.com",
+        "average_rating": 4.5,
+        "address_id": 23
+    },
+    {
+        "name": "La Terrasse de La Brillante - Rooftop",
+        "cuisine": "Moroccan, International, Mediterranean",
+        "description": "No details available",
+        "opening_hours": "No opening hours available",
+        "telephone": "+212 696-035951",
+        "website": "http://www.laterrassedelabrillante.com/",
+        "average_rating": 5.0,
+        "address_id": 24
+    },
+    {
+        "name": "Taj Moroccan Food",
+        "cuisine": "Moroccan",
+        "description": "No details available",
+        "opening_hours": "07:00 AM - 12:00 AM",
+        "telephone": "+212 5244-44294",
+        "website": "http://imperious-agency.com/link/menu-taj-food.pdf",
+        "average_rating": 5.0,
+        "address_id": 25
+    },
+    {
+        "name": "Cafe Babouche",
+        "cuisine": "African, Moroccan, Cafe",
+        "description": "No details available",
+        "opening_hours": "11:00 AM - 11:00 PM",
+        "telephone": "+212 5243-75595",
+        "website": "http://www.facebook.com/pages/category/Cafe/Cafe-babouche-1332778330081420",
+        "average_rating": 4.5,
+        "address_id": 26
+    },
+    {
+        "name": "Manzil la Tortue",
+        "cuisine": "French, Moroccan, International",
+        "description": "No details available",
+        "opening_hours": "11:30 AM - 11:00 PM",
+        "telephone": "+212 661-955517",
+        "website": "https://maps.google.com/maps?saddr=&daddr=Km12%2C+Route+de+Ouarzazate+Douar+Gzoula%2C+Marrakech+40000+Morocco@31.614029,-7.890144",
+        "average_rating": 5.0,
+        "address_id": 27
+    },
+    {
+        "name": "ViaVia Morocco Marrakech",
+        "cuisine": "Belgian, Moroccan, International",
+        "description": "No details available",
+        "opening_hours": "12:00 PM - 11:00 PM",
+        "telephone": "+212 641-499187",
+        "website": "http://www.viaviamarrakech.com",
+        "average_rating": 5.0,
+        "address_id": 28
+    },
+    {
+        "name": "Dar Zellij",
+        "cuisine": "Moroccan, VegetarianFriendly, VeganOptions",
+        "description": "Dear Customers, We inform you that the Restaurant Dar Zellij will be closed from July 2nd, 2019 to July 30th, 2019. We will be pleased to welcome you back starting from Wednesday July 31th, 2019. Happy holidays",
+        "opening_hours": "12:00 PM - 12:00 AM",
+        "telephone": "+212 5243-82627",
+        "website": "http://marrakech-riads.com/restaurant-dar-zellij/",
+        "average_rating": 4.5,
+        "address_id": 29
+    },
+    {
+        "name": "L'Ardoise du Marché",
+        "cuisine": "French",
+        "description": "No details available",
+        "opening_hours": "7:30 PM - 11:45 PM",
+        "telephone": "+212 661339923",
+        "website": "http://lardoisedumarche.ma",
+        "average_rating": 4.5,
+        "address_id": 30
+    }
+]

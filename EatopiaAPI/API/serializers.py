@@ -4,7 +4,7 @@ from .models import Address, Restaurant, RestaurantImage, ClientUser, Wishlist, 
 class AddressSerializer(serializers.ModelSerializer):
     class Meta:
         model = Address
-        fields = ('id', 'address_string', 'location', 'latitude', 'longitude', 'city')
+        fields = ('id', 'address_string', 'location', 'latitude', 'longitude')
 
 class RestaurantSerializer(serializers.ModelSerializer):
     address = AddressSerializer()
@@ -21,6 +21,8 @@ class RestaurantSerializer(serializers.ModelSerializer):
         return None
 
 class RestaurantImageSerializer(serializers.ModelSerializer):
+    Restaurant = RestaurantSerializer()
+    
     class Meta:
         model = RestaurantImage
         fields = ('id', 'Restaurant', 'url')

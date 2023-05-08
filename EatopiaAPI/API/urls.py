@@ -10,6 +10,7 @@ urlpatterns = [
     path('address/<int:pk>', AddressDetail.as_view(), name='address_detail'),
     path('restaurants', RestaurantList.as_view(), name='restaurant_list'),
     path('restaurant/<int:pk>', RestaurantDetail.as_view(), name='restaurant_detail'),
+    path('restaurant_images/<int:pk>', RestaurantImagesList.as_view(), name='restaurant_image_detail'),
     path('signin', ClientUserSignInView.as_view(), name='sign_in'),
     path('signup', ClientUserSignUpView.as_view(), name='sign_up'),
     path('user', ClientUserView.as_view(), name='user'),
