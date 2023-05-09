@@ -101,14 +101,109 @@ const Homepage = () => {
   };
 
   const Categories = [
-    "Asian",
-    "Morrocan",
-    "French",
-    "Turkish",
+    "African",
+    "Albanian",
+    "Algerian",
     "American",
+    "Arabic",
+    "Armenian",
+    "Asian",
+    "Australian",
+    "Azerbaijani",
+    "Bangladeshi",
+    "Bar",
+    "Barbecue",
+    "Beer restaurants",
+    "Belgian",
+    "Brazilian",
+    "Brew Pub",
+    "British",
+    "Cafe",
+    "Cambodian",
+    "Campania",
+    "Canadian",
+    "Caribbean",
+    "Catalan",
+    "Central American",
+    "Central European",
+    "Central-Italian",
+    "Chilean",
+    "Chinese",
+    "Contemporary",
+    "Deli",
+    "Diner",
+    "Dining bars",
+    "Eastern European",
+    "Egyptian",
+    "European",
+    "Fast Food",
+    "French",
+    "Fruit parlours",
+    "Fusion",
+    "Gastropub",
+    "Georgian",
+    "Greek",
     "Grill",
+    "Guatemalan",
+    "Hawaiian",
+    "Healthy",
+    "Indian",
+    "International",
+    "Israeli",
     "Italian",
+    "Jamaican",
+    "Japanese",
+    "Japanese Fusion",
+    "Korean",
+    "Latin",
+    "Lebanese",
+    "Mediterranean",
+    "Mexican",
+    "Middle Eastern",
+    "Moroccan",
+    "Neapolitan",
+    "Northern-Italian",
+    "Persian",
+    "Pizza",
+    "Polynesian",
+    "Portuguese",
+    "Pub",
+    "Seafood",
+    "Soups",
+    "South American",
+    "Southern-Italian",
+    "Spanish",
+    "Steakhouse",
+    "Street Food",
+    "Sushi",
+    "Swiss",
+    "Thai",
+    "Turkish",
+    "Tuscan",
+    "Vietnamese",
+    "Welsh",
+    "Wine Bar",
   ];
+
+  const [showMore, setShowMore] = useState(false);
+  const [checkedCategories, setCheckedCategories] = useState([]);
+  const visibleCategoriesLimit = 10;
+
+  const onChangeCheckbox = (event, category) => {
+    if (event.target.checked) {
+      setCheckedCategories([...checkedCategories, category]);
+    } else {
+      setCheckedCategories(checkedCategories.filter(c => c !== category));
+    }
+  };
+
+  const toggleShowMore = () => {
+    setShowMore(!showMore);
+  };
+
+  const visibleCategories = showMore ? Categories : Categories.slice(0, visibleCategoriesLimit);
+  
+
   return (
     <div>
       <Navbar onSearchChange={handleSearchChange} />
@@ -116,16 +211,22 @@ const Homepage = () => {
         <div className="w-60 p-5">
           <p className="text-black text-sm font-extrabold mb-2">Cuisines</p>
           <div className="flex flex-col">
-            {Categories.map((e, index) => (
+            {visibleCategories.map((e, index) => (
               <Checkbox
                 key={index}
                 className=""
-                onChange={onChange}
+                onChange={(event) => onChangeCheckbox(event, e)}
                 style={{ marginInlineStart: 0 }}
               >
                 {e}
               </Checkbox>
             ))}
+            <span
+              className="text-black cursor-pointer text-xs"
+              onClick={toggleShowMore}
+            >
+              {showMore ? "Show less" : "Show more"}
+            </span>
           </div>
           <div>
             <p className="text-black text-sm font-extrabold mt-10 mb-2">
@@ -171,7 +272,7 @@ const Homepage = () => {
               {currentRestaurants.map((e) => (
                 <div
                   key={e.id}
-                  className="w-1/3 mb-7 p-7 rounded-3xl transition-transform transform hover:border-2 hover:bg-white hover:scale-105 duration-300 hover:shadow-2xl"
+                  className="w-1/3 h-fit mb-7 p-7 rounded-3xl transition-transform transform hover:border-2 hover:bg-white hover:scale-105 duration-300 hover:shadow-2xl"
                 >
                   <Restaurantcard
                     id={e.id}

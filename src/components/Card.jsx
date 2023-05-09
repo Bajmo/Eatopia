@@ -1,10 +1,9 @@
 import React from 'react'
-import Suship from '../assets/suship.png'
-const Card = () => {
+
+const Card = (props) => {
   return (
-    <div className='flex items-center border border-black px-4 py-3 rounded-full'>
-        <p>Asian</p>
-        <img className='w-5 ml-2' src={Suship}/>
+    <div className='flex justify-center items-center border border-black px-4 py-3 rounded-full'>
+        <p>{props.name}</p>
     </div>
   )
 }
