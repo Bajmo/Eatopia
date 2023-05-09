@@ -21,11 +21,9 @@ class RestaurantSerializer(serializers.ModelSerializer):
         return None
 
 class RestaurantImageSerializer(serializers.ModelSerializer):
-    Restaurant = RestaurantSerializer()
-    
     class Meta:
         model = RestaurantImage
-        fields = ('id', 'Restaurant', 'url')
+        fields = ('id', 'restaurant_id', 'restaurant_name', 'url')
 
 class GroupSerializer(serializers.StringRelatedField):
     def to_representation(self, value):

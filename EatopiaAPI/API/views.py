@@ -55,7 +55,7 @@ class RestaurantDetail(APIView):
 class RestaurantImagesList(APIView):
     def get(self, request, pk, format=None):
         restaurant = get_object_or_404(Restaurant, pk=pk)
-        restaurant_images = RestaurantImage.objects.filter(Restaurant_id=restaurant.id)
+        restaurant_images = RestaurantImage.objects.filter(restaurant_id=restaurant.id)
         serializer = RestaurantImageSerializer(
             restaurant_images, many=True)
         return Response(serializer.data)

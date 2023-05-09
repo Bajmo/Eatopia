@@ -32,7 +32,8 @@ class Restaurant(models.Model):
     address = models.ForeignKey(Address, on_delete=models.CASCADE, null=False)
 
 class RestaurantImage(models.Model):
-    Restaurant = models.ForeignKey(Restaurant, on_delete=models.CASCADE)
+    restaurant = models.ForeignKey(Restaurant, on_delete=models.CASCADE)
+    restaurant_name = models.CharField(max_length=100)   
     url = models.CharField(null=True, max_length=300, default='No image available')
 
 class ClientUser(AbstractUser):

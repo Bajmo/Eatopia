@@ -1,182 +1,734 @@
 [
     {
-        "address": "5 Derb L'Hotel Bab Doukala, Marrakech 40000 Morocco",
+        "address_string": "5 Derb L'Hotel Bab Doukala, Marrakech 40000 Morocco",
         "location": "https://maps.google.com/maps?saddr=&daddr=5+Derb+L%27Hotel+Bab+Doukala%2C+Marrakech+40000+Morocco@31.632963,-7.997941",
         "latitude": 31.632963,
         "longitude": -7.997941
     },
     {
-        "address": "91 Avenue Homman Fetouaki Medina Mall, Marrakech 40000 Morocco",
+        "address_string": "91 Avenue Homman Fetouaki Medina Mall, Marrakech 40000 Morocco",
         "location": "https://maps.google.com/maps?saddr=&daddr=91+Avenue+Homman+Fetouaki+Medina+Mall%2C+Marrakech+40000+Morocco@31.620466,-7.986482",
         "latitude": 31.620466,
         "longitude": -7.986482
     },
     {
-        "address": "14 et, Benhafssa, 16 Rue Oued El Makhazine Au dessus du KFC de Guéliz, Marrakech 40000 Morocco",
+        "address_string": "14 et, Benhafssa, 16 Rue Oued El Makhazine Au dessus du KFC de Guéliz, Marrakech 40000 Morocco",
         "location": "https://maps.google.com/maps?saddr=&daddr=14+et%2C+Benhafssa%2C+16+Rue+Oued+El+Makhazine+Au+dessus+du+KFC+de+Gu%C3%A9liz%2C+Marrakech+40000+Morocco@31.631384,-8.008198",
         "latitude": 31.631384,
         "longitude": -8.008198
     },
     {
-        "address": "N 149 Residence Soluna, Rue Khalid Ben El Oualid, Marrakech 40000 Morocco",
+        "address_string": "N 149 Residence Soluna, Rue Khalid Ben El Oualid, Marrakech 40000 Morocco",
         "location": "https://maps.google.com/maps?saddr=&daddr=N+149+Residence+Soluna%2C+Rue+Khalid+Ben+El+Oualid%2C+Marrakech+40000+Morocco@31.632574,-8.003793",
         "latitude": 31.632574,
         "longitude": -8.003793
     },
     {
-        "address": "4 rue Badr Guéliz Marrakech, Marrakech 40000 Morocco",
+        "address_string": "4 rue Badr Guéliz Marrakech, Marrakech 40000 Morocco",
         "location": "https://maps.google.com/maps?saddr=&daddr=4+rue+Badr+Gu%C3%A9liz+Marrakech%2C+Marrakech+40000+Morocco@31.632399,-8.006319",
         "latitude": 31.632399,
         "longitude": -8.006319
     },
     {
-        "address": "3 bis rue Abou Hayane Taouhidi, Gueliz, Marrakech 40000 Morocco",
+        "address_string": "3 bis rue Abou Hayane Taouhidi, Gueliz, Marrakech 40000 Morocco",
         "location": "https://maps.google.com/maps?saddr=&daddr=3+bis+rue+Abou+Hayane+Taouhidi%2C+Gueliz%2C+Marrakech+40000+Morocco@31.639067,-8.014753",
         "latitude": 31.639067,
         "longitude": -8.014753
     },
     {
-        "address": "186, Derb chtouka, Marrakech 40000 Morocco",
-        "location": "https://maps.google.com/maps?saddr=&daddr=186%2C+Derb+chtouka%2C+Marrakech+40000+Morocco@31.61266,-7.986873",
-        "latitude": 31.61266,
-        "longitude": -7.986873
-    },
-    {
-        "address": "Street Corner Tarik Ibn Ziad and Moulay Ali Gueliz, Marrakech 40000 Morocco",
-        "location": "https://maps.google.com/maps?saddr=&daddr=Street+Corner+Tarik+Ibn+Ziad+and+Moulay+Ali+Gueliz%2C+Marrakech+40000+Morocco@31.637571,-8.013169",
-        "latitude": 31.637571,
-        "longitude": -8.013169
-    },
-    {
-        "address": "Rue Moulay Ali Gueliz Résidence Al houda, Marrakech 40000 Morocco",
-        "location": "https://maps.google.com/maps?saddr=&daddr=Rue+Moulay+Ali+Gueliz+R%C3%A9sidence+Al+houda%2C+Marrakech+40000+Morocco@31.637169,-8.014103",
-        "latitude": 31.637169,
-        "longitude": -8.014103
-    },
-    {
-        "address": "Rue Kennaria N 123 Bis, Marrakech 40000 Morocco",
-        "location": "https://maps.google.com/maps?saddr=&daddr=Rue+Kennaria+N+123+Bis%2C+Marrakech+40000+Morocco@31.625599,-7.986289",
-        "latitude": 31.625599,
-        "longitude": -7.986289
-    },
-    {
-        "address": "15-12 Rue Tachenbacht, Marrakech 40000 Morocco",
-        "location": "https://maps.google.com/maps?saddr=&daddr=15-12+Rue+Tachenbacht%2C+Marrakech+40000+Morocco@31.63083,-7.98244",
-        "latitude": 31.63083,
-        "longitude": -7.98244
-    },
-    {
-        "address": "91 Avenue Homman Fetouaki, Marrakech 40000 Morocco",
-        "location": "https://maps.google.com/maps?saddr=&daddr=91+Avenue+Homman+Fetouaki%2C+Marrakech+40000+Morocco@31.62039,-7.986538",
-        "latitude": 31.62039,
-        "longitude": -7.986538
-    },
-    {
-        "address": "Douar Coucou, Marrakech Morocco",
-        "location": "https://maps.google.com/maps?saddr=&daddr=Douar+Coucou%2C+Marrakech+Morocco@31.65051,-8.05414",
-        "latitude": 31.65051,
-        "longitude": -8.05414
-    },
-    {
-        "address": "Derb Sidi El Yamani, 24B, Marrakech 40000 Morocco",
-        "location": "https://maps.google.com/maps?saddr=&daddr=Derb+Sidi+El+Yamani%2C+24B%2C+Marrakech+40000+Morocco@31.628956,-7.990959",
-        "latitude": 31.628956,
-        "longitude": -7.990959
-    },
-    {
-        "address": "Riad Zitoun Lakdime 16 Derb Jamaa, Marrakech 40000 Morocco",
-        "location": "https://maps.google.com/maps?saddr=&daddr=Riad+Zitoun+Lakdime+16+Derb+Jamaa%2C+Marrakech+40000+Morocco@31.623796,-7.986164",
-        "latitude": 31.623796,
-        "longitude": -7.986164
-    },
-    {
-        "address": "Av. Yacoub El Mansour Angle Allal El Fassi, Marrakech 40000 Morocco",
-        "location": "https://maps.google.com/maps?saddr=&daddr=Av.+Yacoub+El+Mansour+Angle+Allal+El+Fassi%2C+Marrakech+40000+Morocco@31.640749,-7.999644",
-        "latitude": 31.640749,
-        "longitude": -7.999644
-    },
-    {
-        "address": "91, Avenue Hommane Fetouaki Arsat Maach, Medina Mall, Marrakech 40000 Morocco",
-        "location": "https://maps.google.com/maps?saddr=&daddr=91%2C+Avenue+Hommane+Fetouaki+Arsat+Maach%2C+Medina+Mall%2C+Marrakech+40000+Morocco@31.620464,-7.986483",
-        "latitude": 31.620464,
-        "longitude": -7.986483
-    },
-    {
-        "address": "9 Rue des Banques, Marrakech 40000 Morocco",
-        "location": "https://maps.google.com/maps?saddr=&daddr=9+Rue+des+Banques%2C+Marrakech+40000+Morocco@31.62626,-7.986915",
-        "latitude": 31.62626,
-        "longitude": -7.986915
-    },
-    {
-        "address": "Boulevard Mohamed VI next to mandaloun, Marrakech 40000 Morocco",
+        "address_string": "Boulevard Mohamed VI next to mandaloun, Marrakech 40000 Morocco",
         "location": "https://maps.google.com/maps?saddr=&daddr=Boulevard+Mohamed+VI+next+to+mandaloun%2C+Marrakech+40000+Morocco@31.620104,-8.009833",
         "latitude": 31.620104,
         "longitude": -8.009833
     },
     {
-        "address": "24 Rue Moulay Ali, Marrakech 40000 Morocco",
-        "location": "https://maps.google.com/maps?saddr=&daddr=24+Rue+Moulay+Ali%2C+Marrakech+40000+Morocco@31.637623,-8.013369",
-        "latitude": 31.637623,
-        "longitude": -8.013369
+        "address_string": "Street Corner Tarik Ibn Ziad and Moulay Ali Gueliz, Marrakech 40000 Morocco",
+        "location": "https://maps.google.com/maps?saddr=&daddr=Street+Corner+Tarik+Ibn+Ziad+and+Moulay+Ali+Gueliz%2C+Marrakech+40000+Morocco@31.637571,-8.013169",
+        "latitude": 31.637571,
+        "longitude": -8.013169
     },
     {
-        "address": "8 Place des Ferblontiers, Marrakech 40000 Morocco",
-        "location": "https://maps.google.com/maps?saddr=&daddr=8+Place+des+Ferblontiers%2C+Marrakech+40000+Morocco@31.619827,-7.985012",
-        "latitude": 31.619827,
-        "longitude": -7.985012
+        "address_string": "Rue Moulay Ali Gueliz Résidence Al houda, Marrakech 40000 Morocco",
+        "location": "https://maps.google.com/maps?saddr=&daddr=Rue+Moulay+Ali+Gueliz+R%C3%A9sidence+Al+houda%2C+Marrakech+40000+Morocco@31.637169,-8.014103",
+        "latitude": 31.637169,
+        "longitude": -8.014103
     },
     {
-        "address": "Croisement Av. Moulay Hassan Et Rue Imam Malik, Marrakech 40000 Morocco",
-        "location": "https://maps.google.com/maps?saddr=&daddr=Croisement+Av.+Moulay+Hassan+Et+Rue+Imam+Malik%2C+Marrakech+40000+Morocco@31.62827,-8.005798",
-        "latitude": 31.62827,
-        "longitude": -8.005798
+        "address_string": "Rue Kennaria N 123 Bis, Marrakech 40000 Morocco",
+        "location": "https://maps.google.com/maps?saddr=&daddr=Rue+Kennaria+N+123+Bis%2C+Marrakech+40000+Morocco@31.625599,-7.986289",
+        "latitude": 31.625599,
+        "longitude": -7.986289
     },
     {
-        "address": "17 Derb Cherkaoui Douar Graoua, Marrakech 40000 Morocco",
-        "location": "https://maps.google.com/maps?saddr=&daddr=17+Derb+Cherkaoui+Douar+Graoua%2C+Marrakech+40000+Morocco@31.62524,-7.984018",
-        "latitude": 31.62524,
-        "longitude": -7.984018
+        "address_string": "91 Avenue Homman Fetouaki, Marrakech 40000 Morocco",
+        "location": "https://maps.google.com/maps?saddr=&daddr=91+Avenue+Homman+Fetouaki%2C+Marrakech+40000+Morocco@31.62039,-7.986538",
+        "latitude": 31.62039,
+        "longitude": -7.986538
     },
     {
-        "address": "Rue Bahia 6, Riad Zitoun Jdid La Brillante Marrakech, Marrakech 40000 Morocco",
+        "address_string": "15-12 Rue Tachenbacht, Marrakech 40000 Morocco",
+        "location": "https://maps.google.com/maps?saddr=&daddr=15-12+Rue+Tachenbacht%2C+Marrakech+40000+Morocco@31.63083,-7.98244",
+        "latitude": 31.63083,
+        "longitude": -7.98244
+    },
+    {
+        "address_string": "Douar Coucou, Marrakech Morocco",
+        "location": "https://maps.google.com/maps?saddr=&daddr=Douar+Coucou%2C+Marrakech+Morocco@31.65051,-8.05414",
+        "latitude": 31.65051,
+        "longitude": -8.05414
+    },
+    {
+        "address_string": "Derb Sidi El Yamani, 24B, Marrakech 40000 Morocco",
+        "location": "https://maps.google.com/maps?saddr=&daddr=Derb+Sidi+El+Yamani%2C+24B%2C+Marrakech+40000+Morocco@31.628956,-7.990959",
+        "latitude": 31.628956,
+        "longitude": -7.990959
+    },
+    {
+        "address_string": "Riad Zitoun Lakdime 16 Derb Jamaa, Marrakech 40000 Morocco",
+        "location": "https://maps.google.com/maps?saddr=&daddr=Riad+Zitoun+Lakdime+16+Derb+Jamaa%2C+Marrakech+40000+Morocco@31.623796,-7.986164",
+        "latitude": 31.623796,
+        "longitude": -7.986164
+    },
+    {
+        "address_string": "Av. Yacoub El Mansour Angle Allal El Fassi, Marrakech 40000 Morocco",
+        "location": "https://maps.google.com/maps?saddr=&daddr=Av.+Yacoub+El+Mansour+Angle+Allal+El+Fassi%2C+Marrakech+40000+Morocco@31.640749,-7.999644",
+        "latitude": 31.640749,
+        "longitude": -7.999644
+    },
+    {
+        "address_string": "91, Avenue Hommane Fetouaki Arsat Maach, Medina Mall, Marrakech 40000 Morocco",
+        "location": "https://maps.google.com/maps?saddr=&daddr=91%2C+Avenue+Hommane+Fetouaki+Arsat+Maach%2C+Medina+Mall%2C+Marrakech+40000+Morocco@31.620464,-7.986483",
+        "latitude": 31.620464,
+        "longitude": -7.986483
+    },
+    {
+        "address_string": "Rue Bahia 6, Riad Zitoun Jdid La Brillante Marrakech, Marrakech 40000 Morocco",
         "location": "https://maps.google.com/maps?saddr=&daddr=Rue+Bahia+6%2C+Riad+Zitoun+Jdid+La+Brillante+Marrakech%2C+Marrakech+40000+Morocco@31.622261,-7.984313",
         "latitude": 31.622261,
         "longitude": -7.984313
     },
     {
-        "address": "1 Rue Moulay Ismail Place Jamaa El-fna, Marrakech 40000 Morocco",
+        "address_string": "9 Rue des Banques, Marrakech 40000 Morocco",
+        "location": "https://maps.google.com/maps?saddr=&daddr=9+Rue+des+Banques%2C+Marrakech+40000+Morocco@31.62626,-7.986915",
+        "latitude": 31.62626,
+        "longitude": -7.986915
+    },
+    {
+        "address_string": "24 Rue Moulay Ali, Marrakech 40000 Morocco",
+        "location": "https://maps.google.com/maps?saddr=&daddr=24+Rue+Moulay+Ali%2C+Marrakech+40000+Morocco@31.637623,-8.013369",
+        "latitude": 31.637623,
+        "longitude": -8.013369
+    },
+    {
+        "address_string": "8 Place des Ferblontiers, Marrakech 40000 Morocco",
+        "location": "https://maps.google.com/maps?saddr=&daddr=8+Place+des+Ferblontiers%2C+Marrakech+40000+Morocco@31.619827,-7.985012",
+        "latitude": 31.619827,
+        "longitude": -7.985012
+    },
+    {
+        "address_string": "Croisement Av. Moulay Hassan Et Rue Imam Malik, Marrakech 40000 Morocco",
+        "location": "https://maps.google.com/maps?saddr=&daddr=Croisement+Av.+Moulay+Hassan+Et+Rue+Imam+Malik%2C+Marrakech+40000+Morocco@31.62827,-8.005798",
+        "latitude": 31.62827,
+        "longitude": -8.005798
+    },
+    {
+        "address_string": "17 Derb Cherkaoui Douar Graoua, Marrakech 40000 Morocco",
+        "location": "https://maps.google.com/maps?saddr=&daddr=17+Derb+Cherkaoui+Douar+Graoua%2C+Marrakech+40000+Morocco@31.62524,-7.984018",
+        "latitude": 31.62524,
+        "longitude": -7.984018
+    },
+    {
+        "address_string": "1 Rue Moulay Ismail Place Jamaa El-fna, Marrakech 40000 Morocco",
         "location": "https://maps.google.com/maps?saddr=&daddr=1+Rue+Moulay+Ismail+Place+Jamaa+El-fna%2C+Marrakech+40000+Morocco@31.625784,-7.989608",
         "latitude": 31.625784,
         "longitude": -7.989608
     },
     {
-        "address": "37 Rue Des Banque Medina, Marrakech 40400 Morocco",
-        "location": "https://maps.google.com/maps?saddr=&daddr=37+Rue+Des+Banque+Medina%2C+Marrakech+40400+Morocco@31.626291,-7.986904",
-        "latitude": 31.626291,
-        "longitude": -7.986904
-    },
-    {
-        "address": "Km12, Route de Ouarzazate Douar Gzoula, Marrakech 40000 Morocco",
+        "address_string": "Km12, Route de Ouarzazate Douar Gzoula, Marrakech 40000 Morocco",
         "location": "https://maps.google.com/maps?saddr=&daddr=Km12%2C+Route+de+Ouarzazate+Douar+Gzoula%2C+Marrakech+40000+Morocco@31.614029,-7.890144",
         "latitude": 31.614029,
         "longitude": -7.890144
     },
     {
-        "address": "3 Rue Fandak Next to Mellah Market, nearby Bahia and Badii Palaces., Marrakech 40000 Morocco",
+        "address_string": "3 Rue Fandak Next to Mellah Market, nearby Bahia and Badii Palaces., Marrakech 40000 Morocco",
         "location": "https://maps.google.com/maps?saddr=&daddr=3+Rue+Fandak+Next+to+Mellah+Market%2C+nearby+Bahia+and+Badii+Palaces.%2C+Marrakech+40000+Morocco@31.62015,-7.986621",
         "latitude": 31.62015,
         "longitude": -7.986621
     },
     {
-        "address": "No1 Kaa Sour, Sidi Ben Slimane Medina, Marrakech 40000 Morocco",
+        "address_string": "37 Rue Des Banque Medina, Marrakech 40400 Morocco",
+        "location": "https://maps.google.com/maps?saddr=&daddr=37+Rue+Des+Banque+Medina%2C+Marrakech+40400+Morocco@31.626291,-7.986904",
+        "latitude": 31.626291,
+        "longitude": -7.986904
+    },
+    {
+        "address_string": "70 Rue Fatima Zahra, Marrakech 40000 Morocco",
+        "location": "https://maps.google.com/maps?saddr=&daddr=70+Rue+Fatima+Zahra%2C+Marrakech+40000+Morocco@31.628464,-7.993919",
+        "latitude": 31.628464,
+        "longitude": -7.993919
+    },
+    {
+        "address_string": "24, Derb Si Said, Marrakech 40000 Morocco",
+        "location": "https://maps.google.com/maps?saddr=&daddr=24%2C+Derb+Si+Said%2C+Marrakech+40000+Morocco@31.62271,-7.983853",
+        "latitude": 31.62271,
+        "longitude": -7.983853
+    },
+    {
+        "address_string": "No1 Kaa Sour, Sidi Ben Slimane Medina, Marrakech 40000 Morocco",
         "location": "https://maps.google.com/maps?saddr=&daddr=No1+Kaa+Sour%2C+Sidi+Ben+Slimane+Medina%2C+Marrakech+40000+Morocco@31.637318,-7.992271",
         "latitude": 31.637318,
         "longitude": -7.992271
     },
     {
-        "address": "Rue Oummo el Banin Imm Jaffa, Gueliz El Harti, Marrakech 40000 Morocco",
-        "location": "https://maps.google.com/maps?saddr=&daddr=Rue+Oummo+el+Banin+Imm+Jaffa%2C+Gueliz+El+Harti%2C+Marrakech+40000+Morocco@31.63062,-8.007012",
-        "latitude": 31.63062,
-        "longitude": -8.007012
+        "address_string": "St Kennaria 118 Immeuble biyaze, Marrakech 40000 Morocco",
+        "location": "https://maps.google.com/maps?saddr=&daddr=St+Kennaria+118+Immeuble+biyaze%2C+Marrakech+40000+Morocco@31.62581,-7.986302",
+        "latitude": 31.62581,
+        "longitude": -7.986302
+    },
+    {
+        "address_string": "Hotel El Andalous, Avenue du President Kennedy Hivernage, Marrakech 40020 Morocco",
+        "location": "https://maps.google.com/maps?saddr=&daddr=Hotel+El+Andalous%2C+Avenue+du+President+Kennedy+Hivernage%2C+Marrakech+40020+Morocco@31.621124,-8.00703",
+        "latitude": 31.621124,
+        "longitude": -8.00703
+    },
+    {
+        "address_string": "Kennaria Immeuble el Biaz Numero 3, Marrakech 40000 Morocco",
+        "location": "https://maps.google.com/maps?saddr=&daddr=Kennaria+Immeuble+el+Biaz+Numero+3%2C+Marrakech+40000+Morocco@31.625776,-7.986293",
+        "latitude": 31.625776,
+        "longitude": -7.986293
+    },
+    {
+        "address_string": "15 Gueliz rue Qadi Ayad, El Harti RDC Résidence Mirador, Marrakech 40000 Morocco",
+        "location": "https://maps.google.com/maps?saddr=&daddr=15+Gueliz+rue+Qadi+Ayad%2C+El+Harti+RDC+R%C3%A9sidence+Mirador%2C+Marrakech+40000+Morocco@31.63048,-8.011671",
+        "latitude": 31.63048,
+        "longitude": -8.011671
+    },
+    {
+        "address_string": "6 Dabachi Kennaria Kennaria, Marrakech 40040 Morocco",
+        "location": "https://maps.google.com/maps?saddr=&daddr=6+Dabachi+Kennaria+Kennaria%2C+Marrakech+40040+Morocco@31.62588,-7.986056",
+        "latitude": 31.62588,
+        "longitude": -7.986056
+    },
+    {
+        "address_string": "Hay Zefriti 30 Rue Koutoubia 30, Marrakech 40000 Morocco",
+        "location": "https://maps.google.com/maps?saddr=&daddr=Hay+Zefriti+30+Rue+Koutoubia+30%2C+Marrakech+40000+Morocco@31.626167,-7.992246",
+        "latitude": 31.626167,
+        "longitude": -7.992246
+    },
+    {
+        "address_string": "Angle Rue Loubnane et Rue Souriya Gueliz En face de la Pharmacie Atlas, deriere le Care eden, Marrakech 40000 Morocco",
+        "location": "https://maps.google.com/maps?saddr=&daddr=Angle+Rue+Loubnane+et+Rue+Souriya+Gueliz+En+face+de+la+Pharmacie+Atlas%2C+deriere+le+Care+eden%2C+Marrakech+40000+Morocco@31.634977,-8.009735",
+        "latitude": 31.634977,
+        "longitude": -8.009735
+    },
+    {
+        "address_string": "72 Arset Awzel, Bab Doukkala Taxi stop: Dar el Bacha, Marrakech 40000 Morocco",
+        "location": "https://maps.google.com/maps?saddr=&daddr=72+Arset+Awzel%2C+Bab+Doukkala+Taxi+stop%3A+Dar+el+Bacha%2C+Marrakech+40000+Morocco@31.630596,-7.994729",
+        "latitude": 31.630596,
+        "longitude": -7.994729
+    },
+    {
+        "address_string": "42 Rue Des Banque, Marrakech 40090 Morocco",
+        "location": "https://maps.google.com/maps?saddr=&daddr=42+Rue+Des+Banque%2C+Marrakech+40090+Morocco@31.626305,-7.986994",
+        "latitude": 31.626305,
+        "longitude": -7.986994
+    },
+    {
+        "address_string": "Rue de Yougoslavie, Marrakech Morocco",
+        "location": "https://maps.google.com/maps?saddr=&daddr=Rue+de+Yougoslavie%2C+Marrakech+Morocco@31.631792,-8.013081",
+        "latitude": 31.631792,
+        "longitude": -8.013081
+    },
+    {
+        "address_string": "39 Rue Bab Agnaou Prince, Marrakech 40000 Morocco",
+        "location": "https://maps.google.com/maps?saddr=&daddr=39+Rue+Bab+Agnaou+Prince%2C+Marrakech+40000+Morocco@31.623295,-7.989544",
+        "latitude": 31.623295,
+        "longitude": -7.989544
+    },
+    {
+        "address_string": "84 Rue Riad Zitoun Jdid Medina, Marrakech 40000 Morocco",
+        "location": "https://maps.google.com/maps?saddr=&daddr=84+Rue+Riad+Zitoun+Jdid+Medina%2C+Marrakech+40000+Morocco@31.624268,-7.9851",
+        "latitude": 31.624268,
+        "longitude": -7.9851
+    },
+    {
+        "address_string": "8 derb Cherfa Lakbir, Moussine Medina, Marrakech 40000 Morocco",
+        "location": "https://maps.google.com/maps?saddr=&daddr=8+derb+Cherfa+Lakbir%2C+Moussine+Medina%2C+Marrakech+40000+Morocco@31.629204,-7.990216",
+        "latitude": 31.629204,
+        "longitude": -7.990216
+    },
+    {
+        "address_string": "118 Rue mouassine, Marrakech 40000 Morocco",
+        "location": "https://maps.google.com/maps?saddr=&daddr=118+Rue+mouassine%2C+Marrakech+40000+Morocco@31.630009,-7.989251",
+        "latitude": 31.630009,
+        "longitude": -7.989251
+    },
+    {
+        "address_string": "213 Avenue Moahmed V, Marrakech 40000 Morocco",
+        "location": "https://maps.google.com/maps?saddr=&daddr=213+Avenue+Moahmed+V%2C+Marrakech+40000+Morocco@31.630331,-8.004696",
+        "latitude": 31.630331,
+        "longitude": -8.004696
+    },
+    {
+        "address_string": "Avenue Mohammed VI Residence Hivernage, Marrakech 40020 Morocco",
+        "location": "https://maps.google.com/maps?saddr=&daddr=Avenue+Mohammed+VI+Residence+Hivernage%2C+Marrakech+40020+Morocco@31.62091,-8.009681",
+        "latitude": 31.62091,
+        "longitude": -8.009681
+    },
+    {
+        "address_string": "39 Derb El Farnatchi Marrakech Medina, Marrakech Morocco",
+        "location": "https://maps.google.com/maps?saddr=&daddr=39+Derb+El+Farnatchi+Marrakech+Medina%2C+Marrakech+Morocco@31.63213,-7.985556",
+        "latitude": 31.63213,
+        "longitude": -7.985556
+    },
+    {
+        "address_string": "Leather Market, 35, Kimakhine, Marrakech 40000 Morocco",
+        "location": "https://maps.google.com/maps?saddr=&daddr=Leather+Market%2C+35%2C+Kimakhine%2C+Marrakech+40000+Morocco@31.631104,-7.98825",
+        "latitude": 31.631104,
+        "longitude": -7.98825
+    },
+    {
+        "address_string": "Rue Allal Ben Ahmed et Rue Ibn Sina Gueliz, Marrakech 40000 Morocco",
+        "location": "https://maps.google.com/maps?saddr=&daddr=Rue+Allal+Ben+Ahmed+et+Rue+Ibn+Sina+Gueliz%2C+Marrakech+40000+Morocco@31.638988,-8.013687",
+        "latitude": 31.638988,
+        "longitude": -8.013687
+    },
+    {
+        "address_string": "Derb Hajra, Bab Agnaou, Kasbah, Marrakech 40000 Morocco",
+        "location": "https://maps.google.com/maps?saddr=&daddr=Derb+Hajra%2C+Bab+Agnaou%2C+Kasbah%2C+Marrakech+40000+Morocco@31.617428,-7.990076",
+        "latitude": 31.617428,
+        "longitude": -7.990076
+    },
+    {
+        "address_string": "Rue Moulay Ali Gueliz, Marrakech 40000 Morocco",
+        "location": "https://maps.google.com/maps?saddr=&daddr=Rue+Moulay+Ali+Gueliz%2C+Marrakech+40000+Morocco@31.637371,-8.013867",
+        "latitude": 31.637371,
+        "longitude": -8.013867
+    },
+    {
+        "address_string": "1 Derb Nakouss Riad Zitoune El Jedid, Marrakech 40000 Morocco",
+        "location": "https://maps.google.com/maps?saddr=&daddr=1+Derb+Nakouss+Riad+Zitoune+El+Jedid%2C+Marrakech+40000+Morocco@31.623638,-7.984824",
+        "latitude": 31.623638,
+        "longitude": -7.984824
+    },
+    {
+        "address_string": "7/8 Derb Chaabane - Riad Zitoun Lkd, Marrakech 40000 Morocco",
+        "location": "https://maps.google.com/maps?saddr=&daddr=7%2F8+Derb+Chaabane+-+Riad+Zitoun+Lkd%2C+Marrakech+40000+Morocco@31.624863,-7.987089",
+        "latitude": 31.624863,
+        "longitude": -7.987089
+    },
+    {
+        "address_string": "21 Place Bab Fteuh, Marrakech 40000 Morocco",
+        "location": "https://maps.google.com/maps?saddr=&daddr=21+Place+Bab+Fteuh%2C+Marrakech+40000+Morocco@31.627357,-7.988506",
+        "latitude": 31.627357,
+        "longitude": -7.988506
+    },
+    {
+        "address_string": "Avenue el yarmouk and rue Abdelaziz Elmalzouzi, Marrakech 44000 Morocco",
+        "location": "https://maps.google.com/maps?saddr=&daddr=Avenue+el+yarmouk+and+rue+Abdelaziz+Elmalzouzi%2C+Marrakech+44000+Morocco@31.625395,-8.001392",
+        "latitude": 31.625395,
+        "longitude": -8.001392
+    },
+    {
+        "address_string": "10 Rue El Kennaria Derb Dabachi, Marrakech 40000 Morocco",
+        "location": "https://maps.google.com/maps?saddr=&daddr=10+Rue+El+Kennaria+Derb+Dabachi%2C+Marrakech+40000+Morocco@31.626194,-7.986156",
+        "latitude": 31.626194,
+        "longitude": -7.986156
+    },
+    {
+        "address_string": "18 Rue de la Liberte Gueliz, Marrakech 40000 Morocco",
+        "location": "https://maps.google.com/maps?saddr=&daddr=18+Rue+de+la+Liberte+Gueliz%2C+Marrakech+40000+Morocco@31.634735,-8.012965",
+        "latitude": 31.634735,
+        "longitude": -8.012965
+    },
+    {
+        "address_string": "Rue Haroun Errachid, Quartier Hivernage Sofitel Marrakech Lounge & Spa, Marrakech 40000 Morocco",
+        "location": "https://maps.google.com/maps?saddr=&daddr=Rue+Haroun+Errachid%2C+Quartier+Hivernage+Sofitel+Marrakech+Lounge+%26+Spa%2C+Marrakech+40000+Morocco@31.621866,-8.002805",
+        "latitude": 31.621866,
+        "longitude": -8.002805
+    },
+    {
+        "address_string": "78 bis Derb Nkhel, Rahba Kdima, Medina, Marrakech 40030 Morocco",
+        "location": "https://maps.google.com/maps?saddr=&daddr=78+bis+Derb+Nkhel%2C+Rahba+Kdima%2C+Medina%2C+Marrakech+40030+Morocco@31.629225,-7.986516",
+        "latitude": 31.629225,
+        "longitude": -7.986516
+    },
+    {
+        "address_string": "20, Derb Chtouka Kasbah, Villa Makassar, Marrakech 40000 Morocco",
+        "location": "https://maps.google.com/maps?saddr=&daddr=20%2C+Derb+Chtouka+Kasbah%2C+Villa+Makassar%2C+Marrakech+40000+Morocco@31.61255,-7.987181",
+        "latitude": 31.61255,
+        "longitude": -7.987181
+    },
+    {
+        "address_string": "159, Rue Riad Zaytun Jdid, Marrakech 40000 Morocco",
+        "location": "https://maps.google.com/maps?saddr=&daddr=159%2C+Rue+Riad+Zaytun+Jdid%2C+Marrakech+40000+Morocco@31.624186,-7.985168",
+        "latitude": 31.624186,
+        "longitude": -7.985168
+    },
+    {
+        "address_string": "38, Prince Moulay Rachid -Medina, Marrakech 40000 Morocco",
+        "location": "https://maps.google.com/maps?saddr=&daddr=38%2C+Prince+Moulay+Rachid+-Medina%2C+Marrakech+40000+Morocco@31.623222,-7.989523",
+        "latitude": 31.623222,
+        "longitude": -7.989523
+    },
+    {
+        "address_string": "68, Rue de la Liberte Derriere Carre Eden Gueliz - Voiturier Sur Place, Marrakech 40000 Morocco",
+        "location": "https://maps.google.com/maps?saddr=&daddr=68%2C+Rue+de+la+Liberte+Derriere+Carre+Eden+Gueliz+-+Voiturier+Sur+Place%2C+Marrakech+40000+Morocco@31.636122,-8.0107",
+        "latitude": 31.636122,
+        "longitude": -8.0107
+    },
+    {
+        "address_string": "2-4 Angle Douar Graoua-Kennaria, Marrakech 40000 Morocco",
+        "location": "https://maps.google.com/maps?saddr=&daddr=2-4+Angle+Douar+Graoua-Kennaria%2C+Marrakech+40000+Morocco@31.624039,-7.984995",
+        "latitude": 31.624039,
+        "longitude": -7.984995
+    },
+    {
+        "address_string": "58, Quartier Lakssour Fhel Zefriti, Marrakech 40030 Morocco",
+        "location": "https://maps.google.com/maps?saddr=&daddr=58%2C+Quartier+Lakssour+Fhel+Zefriti%2C+Marrakech+40030+Morocco@31.627579,-7.991908",
+        "latitude": 31.627579,
+        "longitude": -7.991908
+    },
+    {
+        "address_string": "62, Rue Tarik Ibn Zyad, Marrakech 40000 Morocco",
+        "location": "https://maps.google.com/maps?saddr=&daddr=62%2C+Rue+Tarik+Ibn+Zyad%2C+Marrakech+40000+Morocco@31.63434,-8.00996",
+        "latitude": 31.63434,
+        "longitude": -8.00996
+    },
+    {
+        "address_string": "4 Rue Riad Zitoun el Kdim, Marrakech 40000 Morocco",
+        "location": "https://maps.google.com/maps?saddr=&daddr=4+Rue+Riad+Zitoun+el+Kdim%2C+Marrakech+40000+Morocco@31.622234,-7.986439",
+        "latitude": 31.622234,
+        "longitude": -7.986439
+    },
+    {
+        "address_string": "Boulevard des banques rue Zaari N 42 Kennaria, Marrakech 40000 Morocco",
+        "location": "https://maps.google.com/maps?saddr=&daddr=Boulevard+des+banques+rue+Zaari+N+42+Kennaria%2C+Marrakech+40000+Morocco@31.625471,-7.987164",
+        "latitude": 31.625471,
+        "longitude": -7.987164
+    },
+    {
+        "address_string": "40, Dyour Saboun Bab Taghzout, Marrakech 40000 Morocco",
+        "location": "https://maps.google.com/maps?saddr=&daddr=40%2C+Dyour+Saboun+Bab+Taghzout%2C+Marrakech+40000+Morocco@31.635487,-7.989006",
+        "latitude": 31.635487,
+        "longitude": -7.989006
+    },
+    {
+        "address_string": "Avenue Echouhada Hivernage, Marrakech 40000 Morocco",
+        "location": "https://maps.google.com/maps?saddr=&daddr=Avenue+Echouhada+Hivernage%2C+Marrakech+40000+Morocco@31.62387,-8.003085",
+        "latitude": 31.62387,
+        "longitude": -8.003085
+    },
+    {
+        "address_string": "64 Arset Aouzal Bab Doukkala Medina Dar El Bacha, Marrakech 40000 Morocco",
+        "location": "https://maps.google.com/maps?saddr=&daddr=64+Arset+Aouzal+Bab+Doukkala+Medina+Dar+El+Bacha%2C+Marrakech+40000+Morocco@31.63064,-7.994735",
+        "latitude": 31.63064,
+        "longitude": -7.994735
+    },
+    {
+        "address_string": "131 Rue Mouassine, Marrakech 40000 Morocco",
+        "location": "https://maps.google.com/maps?saddr=&daddr=131+Rue+Mouassine%2C+Marrakech+40000+Morocco@31.630754,-7.989509",
+        "latitude": 31.630754,
+        "longitude": -7.989509
+    },
+    {
+        "address_string": "417 Bab Agnaou Face aux tombeaux Saadiens, Marrakech 40000 Morocco",
+        "location": "https://maps.google.com/maps?saddr=&daddr=417+Bab+Agnaou+Face+aux+tombeaux+Saadiens%2C+Marrakech+40000+Morocco@31.617651,-7.989763",
+        "latitude": 31.617651,
+        "longitude": -7.989763
+    },
+    {
+        "address_string": "Residence Mamoune 5 n 115B Quartier El Ghoul, Cite Olm, Marrakech 40000 Morocco",
+        "location": "https://maps.google.com/maps?saddr=&daddr=Residence+Mamoune+5+n+115B+Quartier+El+Ghoul%2C+Cite+Olm%2C+Marrakech+40000+Morocco@31.639433,-8.01985",
+        "latitude": 31.639433,
+        "longitude": -8.01985
+    },
+    {
+        "address_string": "Taoualat Ben Saleh 64 Old city center, Marrakech 40000 Morocco",
+        "location": "https://maps.google.com/maps?saddr=&daddr=Taoualat+Ben+Saleh+64+Old+city+center%2C+Marrakech+40000+Morocco@31.62935,-7.983159",
+        "latitude": 31.62935,
+        "longitude": -7.983159
+    },
+    {
+        "address_string": "Riad Zitoun Kedim No 112, Marrakech 40000 Morocco",
+        "location": "https://maps.google.com/maps?saddr=&daddr=Riad+Zitoun+Kedim+No+112%2C+Marrakech+40000+Morocco@31.620037,-7.985493",
+        "latitude": 31.620037,
+        "longitude": -7.985493
+    },
+    {
+        "address_string": "27, Rue Moulay Ali, Marrakech 40000 Morocco",
+        "location": "https://maps.google.com/maps?saddr=&daddr=27%2C+Rue+Moulay+Ali%2C+Marrakech+40000+Morocco@31.637478,-8.013177",
+        "latitude": 31.637478,
+        "longitude": -8.013177
+    },
+    {
+        "address_string": "197 Hotel De France , Riad Zitoune Lakdim Marrakech Medina, Marrakech 40000 Morocco",
+        "location": "https://maps.google.com/maps?saddr=&daddr=197+Hotel+De+France+%2C+Riad+Zitoune+Lakdim+Marrakech+Medina%2C+Marrakech+40000+Morocco@31.624765,-7.987461",
+        "latitude": 31.624765,
+        "longitude": -7.987461
+    },
+    {
+        "address_string": "Derb Dabachi Medina, Marrakech 40000 Morocco",
+        "location": "https://maps.google.com/maps?saddr=&daddr=Derb+Dabachi+Medina%2C+Marrakech+40000+Morocco@31.627506,-7.98405",
+        "latitude": 31.627506,
+        "longitude": -7.98405
+    },
+    {
+        "address_string": "12, Rue Amsefah, Sidi Abdelaziz .Medina 12, Rue Amsefah, Sidi Abdelaziz . Medina, Marrakech 40000 Morocco",
+        "location": "https://maps.google.com/maps?saddr=&daddr=12%2C+Rue+Amsefah%2C+Sidi+Abdelaziz+.Medina+12%2C+Rue+Amsefah%2C+Sidi+Abdelaziz+.+Medina%2C+Marrakech+40000+Morocco@31.632446,-7.988499",
+        "latitude": 31.632446,
+        "longitude": -7.988499
+    },
+    {
+        "address_string": "Av. Echouhada Et, Rue Du Temple, Marrakech 40000 Morocco",
+        "location": "https://maps.google.com/maps?saddr=&daddr=Av.+Echouhada+Et%2C+Rue+Du+Temple%2C+Marrakech+40000+Morocco@31.622261,-8.000796",
+        "latitude": 31.622261,
+        "longitude": -8.000796
+    },
+    {
+        "address_string": "39 Rue Mohamed El Bakkal Gueliz, Marrakech 40000 Morocco",
+        "location": "https://maps.google.com/maps?saddr=&daddr=39+Rue+Mohamed+El+Bakkal+Gueliz%2C+Marrakech+40000+Morocco@31.642279,-8.017921",
+        "latitude": 31.642279,
+        "longitude": -8.017921
+    },
+    {
+        "address_string": "103, Rue de Yougoslavie Guéliz, Marrakech 40000 Morocco",
+        "location": "https://maps.google.com/maps?saddr=&daddr=103%2C+Rue+de+Yougoslavie+Gu%C3%A9liz%2C+Marrakech+40000+Morocco@31.632818,-8.013362",
+        "latitude": 31.632818,
+        "longitude": -8.013362
+    },
+    {
+        "address_string": "34 Derb L'Hotel Bab Doukala Medina, Marrakech 40000 Morocco",
+        "location": "https://maps.google.com/maps?saddr=&daddr=34+Derb+L%27Hotel+Bab+Doukala+Medina%2C+Marrakech+40000+Morocco@31.632881,-7.997657",
+        "latitude": 31.632881,
+        "longitude": -7.997657
+    },
+    {
+        "address_string": "14 Derb Lafkih Sbaai Quartier Luksour, Marrakech 40000 Morocco",
+        "location": "https://maps.google.com/maps?saddr=&daddr=14+Derb+Lafkih+Sbaai+Quartier+Luksour%2C+Marrakech+40000+Morocco@31.627417,-7.992205",
+        "latitude": 31.627417,
+        "longitude": -7.992205
+    },
+    {
+        "address_string": "6 rue Sidi Mimoun, Marrakech 40000 Morocco",
+        "location": "https://maps.google.com/maps?saddr=&daddr=6+rue+Sidi+Mimoun%2C+Marrakech+40000+Morocco@31.620432,-7.991461",
+        "latitude": 31.620432,
+        "longitude": -7.991461
+    },
+    {
+        "address_string": "60 Derb Jdid Douar Graoua, Marrakech 40000 Morocco",
+        "location": "https://maps.google.com/maps?saddr=&daddr=60+Derb+Jdid+Douar+Graoua%2C+Marrakech+40000+Morocco@31.625114,-7.983197",
+        "latitude": 31.625114,
+        "longitude": -7.983197
+    },
+    {
+        "address_string": "Rue des Ksour 3 Derb El Messaoudyenne 3derb El messaouienne ksour, Marrakech 40000 Morocco",
+        "location": "https://maps.google.com/maps?saddr=&daddr=Rue+des+Ksour+3+Derb+El+Messaoudyenne+3derb+El+messaouienne+ksour%2C+Marrakech+40000+Morocco@31.628124,-7.991954",
+        "latitude": 31.628124,
+        "longitude": -7.991954
+    },
+    {
+        "address_string": "Rue Ibnou Marine A 100 M de la Place Jemmaa El Fna, Marrakech Morocco",
+        "location": "https://maps.google.com/maps?saddr=&daddr=Rue+Ibnou+Marine+A+100+M+de+la+Place+Jemmaa+El+Fna%2C+Marrakech+Morocco@31.624594,-7.989633",
+        "latitude": 31.624594,
+        "longitude": -7.989633
+    },
+    {
+        "address_string": "89 Passage Prince Moulay Rachid, Marrakech 40000 Morocco",
+        "location": "https://maps.google.com/maps?saddr=&daddr=89+Passage+Prince+Moulay+Rachid%2C+Marrakech+40000+Morocco@31.622974,-7.989675",
+        "latitude": 31.622974,
+        "longitude": -7.989675
+    },
+    {
+        "address_string": "1 & 4 Derb Khettara-Kaa El Mechraa, Palais Tinmel, Marrakech 40000 Morocco",
+        "location": "https://maps.google.com/maps?saddr=&daddr=1+%26+4+Derb+Khettara-Kaa+El+Mechraa%2C+Palais+Tinmel%2C+Marrakech+40000+Morocco@31.640123,-7.988614",
+        "latitude": 31.640123,
+        "longitude": -7.988614
+    },
+    {
+        "address_string": "35 Souk Jeld Kimakine 35 Souk Jeld Kimakhine, Marrakech 40000 Morocco",
+        "location": "https://maps.google.com/maps?saddr=&daddr=35+Souk+Jeld+Kimakine+35+Souk+Jeld+Kimakhine%2C+Marrakech+40000+Morocco@31.631172,-7.988471",
+        "latitude": 31.631172,
+        "longitude": -7.988471
+    },
+    {
+        "address_string": "64 place Ftouh Marrakech GSM Praça, Marrakech 40000 Morocco",
+        "location": "https://maps.google.com/maps?saddr=&daddr=64+place+Ftouh+Marrakech+GSM+Pra%C3%A7a%2C+Marrakech+40000+Morocco@31.632954,-7.989691",
+        "latitude": 31.632954,
+        "longitude": -7.989691
+    },
+    {
+        "address_string": "3,8 KM, Route de l'Ourika Restaurant Lounge Marrakech, Marrakech 40000 Morocco",
+        "location": "https://maps.google.com/maps?saddr=&daddr=3%2C8+KM%2C+Route+de+l%27Ourika+Restaurant+Lounge+Marrakech%2C+Marrakech+40000+Morocco@31.574823,-7.978414",
+        "latitude": 31.574823,
+        "longitude": -7.978414
+    },
+    {
+        "address_string": "2 Rue Souk Chaaria Kast Benahid, Marrakech 40000 Morocco",
+        "location": "https://maps.google.com/maps?saddr=&daddr=2+Rue+Souk+Chaaria+Kast+Benahid%2C+Marrakech+40000+Morocco@31.630714,-7.986303",
+        "latitude": 31.630714,
+        "longitude": -7.986303
+    },
+    {
+        "address_string": "Kaat Bennahid Souk Ahel, N 44, Marrakech 40000 Morocco",
+        "location": "https://maps.google.com/maps?saddr=&daddr=Kaat+Bennahid+Souk+Ahel%2C+N+44%2C+Marrakech+40000+Morocco@31.632023,-7.984186",
+        "latitude": 31.632023,
+        "longitude": -7.984186
+    },
+    {
+        "address_string": "Derb Ftheu Ftouh Medina, Marrakech 40000 Morocco",
+        "location": "https://maps.google.com/maps?saddr=&daddr=Derb+Ftheu+Ftouh+Medina%2C+Marrakech+40000+Morocco@31.627262,-7.988521",
+        "latitude": 31.627262,
+        "longitude": -7.988521
+    },
+    {
+        "address_string": "N _ 4 Rue Riad Laarouss Next To Popular Bank, Marrakech 40030 Morocco",
+        "location": "https://maps.google.com/maps?saddr=&daddr=N+_+4+Rue+Riad+Laarouss+Next+To+Popular+Bank%2C+Marrakech+40030+Morocco@31.63368,-7.991729",
+        "latitude": 31.63368,
+        "longitude": -7.991729
+    },
+    {
+        "address_string": "Rue Oum Errabia, Marrakech Morocco",
+        "location": "https://maps.google.com/maps?saddr=&daddr=Rue+Oum+Errabia%2C+Marrakech+Morocco@31.630697,-8.00421",
+        "latitude": 31.630697,
+        "longitude": -8.00421
+    },
+    {
+        "address_string": "63, Rue Sidi El Yamani Quartier Mouassine, Medina, Marrakech 40000 Morocco",
+        "location": "https://maps.google.com/maps?saddr=&daddr=63%2C+Rue+Sidi+El+Yamani+Quartier+Mouassine%2C+Medina%2C+Marrakech+40000+Morocco@31.629744,-7.990542",
+        "latitude": 31.629744,
+        "longitude": -7.990542
+    },
+    {
+        "address_string": "93 Arset Aouzal Road, Dar EL Basha Near Dar El Basha and the Taxis at Pashas Palace. On the way to Bab Doukalla, Marrakech 40000 Morocco",
+        "location": "https://maps.google.com/maps?saddr=&daddr=93+Arset+Aouzal+Road%2C+Dar+EL+Basha+Near+Dar+El+Basha+and+the+Taxis+at+Pashas+Palace.+On+the+way+to+Bab+Doukalla%2C+Marrakech+40000+Morocco@31.631638,-7.994242",
+        "latitude": 31.631638,
+        "longitude": -7.994242
+    },
+    {
+        "address_string": "107 Place Jemaa El Fnaa, Marrakech 40000 Morocco",
+        "location": "https://maps.google.com/maps?saddr=&daddr=107+Place+Jemaa+El+Fnaa%2C+Marrakech+40000+Morocco@31.626741,-7.98754",
+        "latitude": 31.626741,
+        "longitude": -7.98754
+    },
+    {
+        "address_string": "Rue Azbest No. 30, Marrakech 40000 Morocco",
+        "location": "https://maps.google.com/maps?saddr=&daddr=Rue+Azbest+No.+30%2C+Marrakech+40000+Morocco@31.629936,-7.985011",
+        "latitude": 31.629936,
+        "longitude": -7.985011
+    },
+    {
+        "address_string": "No 74, Rue Sidi Ishaq Azbezt, Marrakech 40000 Morocco",
+        "location": "https://maps.google.com/maps?saddr=&daddr=No+74%2C+Rue+Sidi+Ishaq+Azbezt%2C+Marrakech+40000+Morocco@31.630291,-7.985945",
+        "latitude": 31.630291,
+        "longitude": -7.985945
+    },
+    {
+        "address_string": "Place Du 16 Novembre Marrakech Plazza, Marrakech 40000 Morocco",
+        "location": "https://maps.google.com/maps?saddr=&daddr=Place+Du+16+Novembre+Marrakech+Plazza%2C+Marrakech+40000+Morocco@31.633194,-8.007059",
+        "latitude": 31.633194,
+        "longitude": -8.007059
+    },
+    {
+        "address_string": "81 Derb Nkhal, Rahba Lakdima, Marrakech 40000 Morocco",
+        "location": "https://maps.google.com/maps?saddr=&daddr=81+Derb+Nkhal%2C+Rahba+Lakdima%2C+Marrakech+40000+Morocco@31.629234,-7.98651",
+        "latitude": 31.629234,
+        "longitude": -7.98651
+    },
+    {
+        "address_string": "9bis route de l'Ourika, Marrakech 40000 Morocco",
+        "location": "https://maps.google.com/maps?saddr=&daddr=9bis+route+de+l%27Ourika%2C+Marrakech+40000+Morocco@31.59,-7.985256",
+        "latitude": 31.59,
+        "longitude": -7.985256
+    },
+    {
+        "address_string": "40 Souk Ablouh Jamaa Fna, Marrakech 40000 Morocco",
+        "location": "https://maps.google.com/maps?saddr=&daddr=40+Souk+Ablouh+Jamaa+Fna%2C+Marrakech+40000+Morocco@31.627087,-7.987949",
+        "latitude": 31.627087,
+        "longitude": -7.987949
+    },
+    {
+        "address_string": "Route des Jardins de la Palmeraie Circuit De La Palmeraie, Propriété Farah, Marrakech 40000 Morocco",
+        "location": "https://maps.google.com/maps?saddr=&daddr=Route+des+Jardins+de+la+Palmeraie+Circuit+De+La+Palmeraie%2C+Propri%C3%A9t%C3%A9+Farah%2C+Marrakech+40000+Morocco@31.683208,-7.990461",
+        "latitude": 31.683208,
+        "longitude": -7.990461
+    },
+    {
+        "address_string": "35 Derb Sqaya Riad Zeitoun Lakdim, Marrakech 40000 Morocco",
+        "location": "https://maps.google.com/maps?saddr=&daddr=35+Derb+Sqaya+Riad+Zeitoun+Lakdim%2C+Marrakech+40000+Morocco@31.623606,-7.987163",
+        "latitude": 31.623606,
+        "longitude": -7.987163
+    },
+    {
+        "address_string": "Quartier Dar El Bacha 9, Derb Sidi Ali Ben Hamdouche, Marrakech 40000 Morocco",
+        "location": "https://maps.google.com/maps?saddr=&daddr=Quartier+Dar+El+Bacha+9%2C+Derb+Sidi+Ali+Ben+Hamdouche%2C+Marrakech+40000+Morocco@31.633488,-7.991046",
+        "latitude": 31.633488,
+        "longitude": -7.991046
+    },
+    {
+        "address_string": "Talaa 294 crossing the Azbezt street, Marrakech 40000 Morocco",
+        "location": "https://maps.google.com/maps?saddr=&daddr=Talaa+294+crossing+the+Azbezt+street%2C+Marrakech+40000+Morocco@31.630917,-7.986937",
+        "latitude": 31.630917,
+        "longitude": -7.986937
+    },
+    {
+        "address_string": "Avenue du President Kennedy , Hivernage Hôtel El Andalous Marrakech, Marrakech 40020 Morocco",
+        "location": "https://maps.google.com/maps?saddr=&daddr=Avenue+du+President+Kennedy+%2C+Hivernage+H%C3%B4tel+El+Andalous+Marrakech%2C+Marrakech+40020+Morocco@31.621037,-8.007339",
+        "latitude": 31.621037,
+        "longitude": -8.007339
+    },
+    {
+        "address_string": "7/8 Derb Chaabane Riad Zitoune Lakdim, Marrakech 40000 Morocco",
+        "location": "https://maps.google.com/maps?saddr=&daddr=7%2F8+Derb+Chaabane+Riad+Zitoune+Lakdim%2C+Marrakech+40000+Morocco@31.624826,-7.987074",
+        "latitude": 31.624826,
+        "longitude": -7.987074
+    },
+    {
+        "address_string": "Rue Sidi Mimoun 98, Marrakech 40000 Morocco",
+        "location": "https://maps.google.com/maps?saddr=&daddr=Rue+Sidi+Mimoun+98%2C+Marrakech+40000+Morocco@31.633112,-7.989676",
+        "latitude": 31.633112,
+        "longitude": -7.989676
+    },
+    {
+        "address_string": "10 Rue El Moustachfa, Riad Mokha derrière l hotel Tazi, Medina, Marrakech 40000 Morocco",
+        "location": "https://maps.google.com/maps?saddr=&daddr=10+Rue+El+Moustachfa%2C+Riad+Mokha+derri%C3%A8re+l+hotel+Tazi%2C+Medina%2C+Marrakech+40000+Morocco@31.622078,-7.98848",
+        "latitude": 31.622078,
+        "longitude": -7.98848
+    },
+    {
+        "address_string": "300 souika Riad Laarousse, Marrakech 40000 Morocco",
+        "location": "https://maps.google.com/maps?saddr=&daddr=300+souika+Riad+Laarousse%2C+Marrakech+40000+Morocco@31.634092,-7.990814",
+        "latitude": 31.634092,
+        "longitude": -7.990814
+    },
+    {
+        "address_string": "36 Rue Ibn Aicha, Marrakech 40000 Morocco",
+        "location": "https://maps.google.com/maps?saddr=&daddr=36+Rue+Ibn+Aicha%2C+Marrakech+40000+Morocco@31.638025,-8.013668",
+        "latitude": 31.638025,
+        "longitude": -8.013668
+    },
+    {
+        "address_string": "Place du 16 Novembre Marrakech Plaza, Marrakech 40000 Morocco",
+        "location": "https://maps.google.com/maps?saddr=&daddr=Place+du+16+Novembre+Marrakech+Plaza%2C+Marrakech+40000+Morocco@31.63273,-8.007584",
+        "latitude": 31.63273,
+        "longitude": -8.007584
+    },
+    {
+        "address_string": "Rue Ben Salah 3 Interseccion Rue Derb Ben Allal, Marrakech 40000 Morocco",
+        "location": "https://maps.google.com/maps?saddr=&daddr=Rue+Ben+Salah+3+Interseccion+Rue+Derb+Ben+Allal%2C+Marrakech+40000+Morocco@31.628464,-7.983446",
+        "latitude": 31.628464,
+        "longitude": -7.983446
+    },
+    {
+        "address_string": "96 Rue Mohammed El Beqal, Marrakech 40000 Morocco",
+        "location": "https://maps.google.com/maps?saddr=&daddr=96+Rue+Mohammed+El+Beqal%2C+Marrakech+40000+Morocco@31.63534,-8.015442",
+        "latitude": 31.63534,
+        "longitude": -8.015442
+    },
+    {
+        "address_string": "21 Derb Chtouka, Marrakech 40000 Morocco",
+        "location": "https://maps.google.com/maps?saddr=&daddr=21+Derb+Chtouka%2C+Marrakech+40000+Morocco@31.61195,-7.987425",
+        "latitude": 31.61195,
+        "longitude": -7.987425
     }
 ]
